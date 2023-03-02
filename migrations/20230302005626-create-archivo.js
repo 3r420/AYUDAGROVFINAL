@@ -3,15 +3,13 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('archivos', {
-      id: {
+      id_archivo: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id_archivo: {
-        type: Sequelize.INTEGER
-      },
+     
       nombre_archivo: {
         type: Sequelize.STRING
       },
