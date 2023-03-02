@@ -1,12 +1,12 @@
 const Sequelize = require('sequelize');
-const categoria = require('../models/categoria');
+const subcategoria = require('../models/categoria');
 
 
 
 
 module.exports={
 
-    ListarCategoria(req,res){
+    Listarsubcategoria(req,res){
         return categoria.findAll({})
         .then(categoria=>res.status(200).send(categoria))
         .catch(error=>res.status(400).send(error));
