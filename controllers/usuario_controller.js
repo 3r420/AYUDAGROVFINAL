@@ -51,5 +51,16 @@ module.exports={
           .then(usuario => res.status(200).send(usuario))
           .catch(error => res.status(400).send(error))
      },
+     EliminarUsuario(req,res) {
+          return usuario.destroy({
+               where: {
+                    id: req.params.id
+               }
+          }
+          )
+
+          .then(usuario => res.status(200).send(usuario))
+          .catch(error => res.status(400).send(error))
+     },
 
 }
