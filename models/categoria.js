@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class categoria extends Model {
     /**
@@ -15,16 +16,17 @@ module.exports = (sequelize, DataTypes) => {
   }
   categoria.init({
     id_categoria:{
-      allowNull: false,
+      type:DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+    
     },
     descripcion: DataTypes.STRING,
     titulo: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'categoria',
+    tableName:'categoria',
   });
   return categoria;
 };
