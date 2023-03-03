@@ -18,13 +18,14 @@ module.exports = (sequelize, DataTypes) => {
       allowNull:false,
       autoIncrement:true,
       primaryKey:true,
-      type:sequelize.INTEGER
+      type:DataTypes.INTEGER
     },
     
     nombre: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'rol',
+    tableName:'rol'
   });
   return rol;
 };
