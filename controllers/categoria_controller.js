@@ -1,18 +1,24 @@
+
 const {Model } = require('sequelize');
 const { QueryError } = require('sequelize');
 const Sequelize = require ('sequelize');
-const Categoria = require ('../models/categoria');
+const Categoria = require ('../models').Categoria;
+// const Categoria =require('../models/categoria');
 
 
 
 
 module.exports={
 
-    ListarCategoria(_,res){
-        return Categoria.findAll({})
-        .then(Categoria=>res.status(200).send(Categoria))
-        .catch(error=>res.status(400).send(error));
-    },
+    ListarCategoria(req,res){
+        console.log('yes')
+        return Categoria.findAll({
+       })
+                
+   
+        .then(Categoria => res.status(200).send(Categoria))
+        .catch(error => res.status(400).send(error.toString()))
+   },
 
 
     CreateCategoria(req, res){
