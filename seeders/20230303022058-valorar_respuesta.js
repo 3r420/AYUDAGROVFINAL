@@ -7,7 +7,7 @@ module.exports = {
       
       usuario_id: 1,
       respuesta_id: 1,
-      calificacion: 5,
+      calificacion: 4,
       createdAt: new Date(),
       updatedAt: new Date()
     }]);
