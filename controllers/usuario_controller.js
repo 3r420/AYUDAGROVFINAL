@@ -27,7 +27,28 @@ module.exports={
                estado: req.body.estado
           })
           
-          .then(agricultor => res.status(200).send(agricultor))
+          .then(usuario => res.status(200).send(usuario))
+          .catch(error => res.status(400).send(error))
+     },
+     UpdateUsuario(req, res){
+          return usuario.update({
+               nombre: req.body.nombre,
+               apellido: req.body.apellido,
+               correo_electronico:req.body.correo_electronico,
+               contrasena: req.body.contrasena,
+               repetir_contrasena: req.body.repetir_contrasena,
+               telefono: req.body.telefono,
+               direccion: req.body.direccion,
+               estado: req.body.estado
+          }
+          {
+               where: {
+                    id: req.params.id,
+               },
+          }
+          )
+          
+          .then(usuario => res.status(200).send(usuario))
           .catch(error => res.status(400).send(error))
      },
 
