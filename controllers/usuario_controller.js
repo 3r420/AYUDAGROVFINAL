@@ -40,7 +40,7 @@ module.exports={
                telefono: req.body.telefono,
                direccion: req.body.direccion,
                estado: req.body.estado
-          }
+          },
           {
                where: {
                     id: req.params.id,
