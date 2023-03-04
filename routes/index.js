@@ -11,7 +11,7 @@ const usuario = require ('../controllers/usuario_controller');
 
 //rutas de categorias
 router.get('/listarCategoria',categoria.ListarCategoria);
-router.post('/nuevaCategoria')
+router.post('/nuevaCategoria',categoria.CreateCategoria);
 //rutas de usuario
 router.get('/listarUsuario',usuario.ListarUsuario);
 
