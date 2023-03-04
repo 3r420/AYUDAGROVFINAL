@@ -22,8 +22,7 @@ module.exports={
 
 
     CreateCategoria(req, res){
-        return categoria.create({
-             id_categoria:req.body.id_categoria,
+        return Categoria.create({
              descripcion: req.body.descripcion,
              titulo: req.body.titulo,
              
@@ -32,5 +31,33 @@ module.exports={
         .then(categoria => res.status(200).send(categoria))
         .catch(error => res.status(400).send(error))
    },
+
    
+   UpdateUsuario(req, res){
+     return Categoria.update({
+          descripcion: req.body.descripcion,
+          titulo: req.body.titulo,
+     },
+     {
+          where: {
+               id: req.params.id,
+          },
+     }
+     )
+     
+     .then(usuario => res.status(200).send(usuario))
+     .catch(error => res.status(400).send(error))
+},
+EliminarUsuario(req,res) {
+     return Categoria.destroy({
+          where: {
+               id: req.params.id
+          }
+     }
+     )
+
+     .then(usuario => res.status(200).send(usuario))
+     .catch(error => res.status(400).send(error))
+},
+
 }
