@@ -9,7 +9,9 @@ const categoria = require ('../controllers/categoria_controller');
 
 
 //rutas
+//get para traer
 router.get('/listarCategoria',categoria.ListarCategoria);
+//post para enviar
 router.post('/nuevaCategoria',categoria.CreateCategoria);
 
 

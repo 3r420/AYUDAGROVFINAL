@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull:false,
       autoIncrement:true,
       primaryKey:true,
-      type:Sequelize.INTEGER
+      type:DataTypes.INTEGER
     },
     subcategorias_id: DataTypes.INTEGER,
     descripcion: DataTypes.STRING,

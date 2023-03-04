@@ -7,6 +7,7 @@ const respuesta = require('../models/').Respuesta;
 module.exports={
 
     ListarCategoria(req,res){
+        console.log('si')
         return respuesta.findAll({})
         .then(respuesta=>res.status(200).send(respuesta))
         .catch(error=>res.status(400).send(error));
