@@ -1,12 +1,6 @@
 const { QueryError } = require('sequelize');
 const Sequelize = require('sequelize');
-const pregunta = require('../models').pregunta;
-const rol = require('../models').rol;
-const categoria = require('../models').categoria
-const usuario = require('../models').usuario;
-const archivo = require('../models').archivo
-const sugerencia=require('../models').sugerencia
-const subcategoria =require('../models').categoria;
+const usuario = require('../models').Usuario;
 
 module.exports={
      ListarUsuario(req,res){
