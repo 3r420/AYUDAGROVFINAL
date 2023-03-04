@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       titulo: {
-        type: Sequelize.STRING
+         type: Sequelize.STRING
       },
       
     });
