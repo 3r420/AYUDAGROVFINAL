@@ -6,7 +6,7 @@ const respuesta = require('../models/').Respuesta;
 
 module.exports={
 
-    ListarCategoria(req,res){
+    ListarRespuesta(req,res){
         console.log('si')
         return respuesta.findAll({})
         .then(respuesta=>res.status(200).send(respuesta))
@@ -14,7 +14,7 @@ module.exports={
     },
 
 
-    Createsugerencia(req, res){
+    CreateRespuesta(req, res){
         return respuesta.create({
              descripcion:req.body.descripcion,
              hora_fecha: req.body.hora_fecha,

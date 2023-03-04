@@ -7,6 +7,7 @@ var router = express.Router();
 const categoria = require ('../controllers/categoria_controller');
 const usuario = require ('../controllers/usuario_controller');
 const sugerencia = require ('../controllers/sugerencia_controller');
+const respuesta = require ('../controllers/respuesta_controller');
 
 
 
@@ -16,6 +17,8 @@ router.post('/nuevaCategoria')
 //rutas de usuario
 router.get('/listarUsuario',usuario.ListarUsuario);
 router.get('/Listarsugerencia',sugerencia.ListarSugerencia);
+
+
 
 
 
