@@ -1,12 +1,14 @@
-const Sequelize = require('sequelize');
-const archivo = require('../models/archivo');
+const {Model } = require('sequelize');
+const { QueryError } = require('sequelize');
+const Sequelize = require ('sequelize');
+const archivo = require ('../models/archivo');
 
 
 
 
 module.exports={
 
-    ListarArchivo(req,res){
+    ListarArchivo(_,res){
         return archivo.findAll({})
         .then(archivo=>res.status(200).send(archivo))
         .catch(error=>res.status(400).send(error));
@@ -21,7 +23,7 @@ module.exports={
              
         })
          
-        .then(categoria => res.status(200).send(categoria))
+        .then(archivo => res.status(200).send(archivo))
         .catch(error => res.status(400).send(error))
    },
    
