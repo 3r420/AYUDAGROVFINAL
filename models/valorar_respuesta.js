@@ -2,11 +2,10 @@
 const {
   Model
 } = require('sequelize');
-
 module.exports = (sequelize, DataTypes) => {
-  class Categoria extends Model {
+  class valorar_respuesta extends Model {
     /**
-     * Helper method for defining associations.z
+     * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
@@ -14,19 +13,19 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  
-  Categoria.init({
-      id_categoria:{
-      primaryKey: true,
-      autoIncrement: true,
+  valorar_respuesta.init({
+    id_valorar:{
+      allowNull:false,
+      autoIncrement:true,
+      primaryKey:true,
       type:DataTypes.INTEGER
     },
-    descripcion: DataTypes.STRING,
-    titulo: DataTypes.STRING
+    usuario_id: DataTypes.INTEGER,
+    respuesta_id: DataTypes.INTEGER,
+    calificacion: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Categoria',
-    tableName:'categoria',
+    modelName: 'valorar_respuesta',
   });
-  return Categoria;
+  return valorar_respuesta;
 };
