@@ -2,10 +2,11 @@
 const {
   Model
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
-  class categoria extends Model {
+  class Categoria extends Model {
     /**
-     * Helper method for defining associations.
+     * Helper method for defining associations.z
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
@@ -13,18 +14,18 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  categoria.init({
-    id_categoria:{
-      allowNull: false,
-      autoIncrement: true,
+  Categoria.init({
+      id_categoria:{
       primaryKey: true,
-      type: DataTypes.INTEGER
+      autoIncrement: true,
+      type:DataTypes.INTEGER,
     },
     descripcion: DataTypes.STRING,
     titulo: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'categoria',
+    modelName: 'Categoria',
+    tableName:'categoria',
   });
-  return categoria;
+  return Categoria;
 };

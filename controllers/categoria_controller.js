@@ -1,5 +1,9 @@
-const Sequelize = require('sequelize');
-const categoria = require('../models/categoria');
+
+const {Model } = require('sequelize');
+const { QueryError } = require('sequelize');
+const Sequelize = require ('sequelize');
+const Categoria = require ('../models').Categoria;
+// const Categoria =require('../models/categoria');
 
 
 
@@ -7,10 +11,14 @@ const categoria = require('../models/categoria');
 module.exports={
 
     ListarCategoria(req,res){
-        return categoria.findAll({})
-        .then(categoria=>res.status(200).send(categoria))
-        .catch(error=>res.status(400).send(error));
-    },
+        console.log('yes')
+        return Categoria.findAll({
+       })
+                
+   
+        .then(Categoria => res.status(200).send(Categoria))
+        .catch(error => res.status(400).send(error.toString()))
+   },
 
 
     CreateCategoria(req, res){
@@ -21,7 +29,7 @@ module.exports={
              
         })
          
-        .then(agricultor => res.status(200).send(agricultor))
+        .then(categoria => res.status(200).send(categoria))
         .catch(error => res.status(400).send(error))
    },
    
