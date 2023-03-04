@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sugerencia = require('../models/sugerencia');
+const sugerencia = require('../models').Sugerencia;
 
 
 
@@ -15,9 +15,11 @@ module.exports={
 
     Createsugerencia(req, res){
         return sugerencia.create({
-             id_sugerencia:req.body.id_sugerencia,
+             //id_sugerencia:req.body.id_sugerencia,
+             subcategorias_id:req.body.subcategorias_id,
              descripcion: req.body.descripcion,
-             titulo: req.body.titulo,
+             usuario_id:req.body.usuario_id,
+            
              
         })
          
