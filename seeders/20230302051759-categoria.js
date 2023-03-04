@@ -4,7 +4,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('categoria', [{
-      descripcion: 'hace referencia a fruotos',
+      descripcion: 'hace referencia a frutos',
       titulo: 'frutos',
       createdAt: new Date(),
       updatedAt: new Date()

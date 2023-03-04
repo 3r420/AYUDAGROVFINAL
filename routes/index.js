@@ -5,14 +5,15 @@ var router = express.Router();
 
 //constantes del llamado a los controladores
 const categoria = require ('../controllers/categoria_controller');
+const usuario = require ('../controllers/usuario_controller');
 
 
 
-//rutas
-//get para traer
+//rutas de categorias
 router.get('/listarCategoria',categoria.ListarCategoria);
-//post para enviar
-router.post('/nuevaCategoria',categoria.CreateCategoria);
+router.post('/nuevaCategoria')
+//rutas de usuario
+router.get('/listarUsuario',usuario.ListarUsuario);
 
 
 /* GET home page. 
