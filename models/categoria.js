@@ -14,11 +14,12 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
+  
   Categoria.init({
       id_categoria:{
       primaryKey: true,
       autoIncrement: true,
-      type:DataTypes.INTEGER,
+      type:DataTypes.INTEGER
     },
     descripcion: DataTypes.STRING,
     titulo: DataTypes.STRING
