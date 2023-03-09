@@ -14,7 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   sugerencia_archivo.init({
-    id_sugerencia_archivo: DataTypes.INTEGER,
+    id_sugerencia_archivo: {
+       allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type:DataTypes.INTEGER},
     archivo_id: DataTypes.INTEGER,
     sugerencia_id: DataTypes.INTEGER
   }, {

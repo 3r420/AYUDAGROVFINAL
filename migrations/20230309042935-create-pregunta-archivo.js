@@ -2,16 +2,14 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('pregunta-archivos', {
-      id: {
+    await queryInterface.createTable('pregunta_archivos', {
+      id_pregunta_archivo: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id_pregunta_archivo: {
-        type: Sequelize.INTEGER
-      },
+     
       pregunta_id: {
         type: Sequelize.INTEGER
       },
@@ -29,6 +27,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('pregunta-archivos');
+    await queryInterface.dropTable('pregunta_archivos');
   }
 };
