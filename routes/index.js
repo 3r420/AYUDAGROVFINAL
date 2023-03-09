@@ -14,6 +14,8 @@ router.get('/listarCategoria',categoria.ListarCategoria);
 router.post('/nuevaCategoria',categoria.CreateCategoria);
 //rutas de usuario
 router.get('/listarUsuario',usuario.ListarUsuario);
+router.post('/nuevoUsuario',usuario.CreateUsuario);
+router.put('/editarUsuario',usuario.UpdateUsuario);
 
 
 /* GET home page. 
