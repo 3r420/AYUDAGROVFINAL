@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class valorar_respuesta extends Model {
+  class Valorar_Respuesta extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  valorar_respuesta.init({
+  Valorar_Respuesta.init({
     id_valorar:{
       allowNull:false,
       autoIncrement:true,
@@ -25,7 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     calificacion: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'valorar_respuesta',
+    modelName: 'Valorar_Respuesta',
+    tableName:'valorar_respuesta'
   });
-  return valorar_respuesta;
+  return Valorar_Respuesta;
 };
