@@ -2,7 +2,7 @@
 const {Model } = require('sequelize');
 const { QueryError } = require('sequelize');
 const Sequelize = require ('sequelize');
-const Categoria = require ('../models').Categoria;
+const categoria = require ('../models').Categoria;
 // const Categoria =require('../models/categoria');
 
 
@@ -12,17 +12,17 @@ module.exports={
 
     ListarCategoria(req,res){
         console.log('yes')
-        return Categoria.findAll({
+        return categoria.findAll({
        })
                 
    
-        .then(Categoria => res.status(200).send(Categoria))
+        .then(categoria => res.status(200).send(categoria))
         .catch(error => res.status(400).send(error.toString()))
    },
 
 
     CreateCategoria(req, res){
-        return Categoria.create({
+        return categoria.create({
              descripcion: req.body.descripcion,
              titulo: req.body.titulo,
              
@@ -34,7 +34,7 @@ module.exports={
 
    
    UpdateUsuario(req, res){
-     return Categoria.update({
+     return categoria.update({
           descripcion: req.body.descripcion,
           titulo: req.body.titulo,
      },
@@ -45,18 +45,18 @@ module.exports={
      }
      )
      
-     .then(usuario => res.status(200).send(usuario))
+     .then(categoria => res.status(200).send(categoria))
      .catch(error => res.status(400).send(error))
 },
 EliminarUsuario(req,res) {
-     return Categoria.destroy({
+     return categoria.destroy({
           where: {
                id: req.params.id
           }
      }
      )
 
-     .then(usuario => res.status(200).send(usuario))
+     .then(categoria => res.status(200).send(categoria))
      .catch(error => res.status(400).send(error))
 },
 
