@@ -16,16 +16,11 @@ const respuesta = require ('../controllers/respuesta_controller');
 router.get('/listarCategoria',categoria.ListarCategoria);//funcionando
 router.post('/nuevaCategoria',categoria.CreateCategoria);//funcionando
 //rutas de usuario
-router.get('/listarUsuario',usuario.ListarUsuario);
-router.post('/nuevoUsuario',usuario.CreateUsuario);
+router.get('/listarUsuario',usuario.ListarUsuario);//funcionando
+router.post('/nuevoUsuario',usuario.CreateUsuario);//funcionando
 router.put('/editarUsuario/:id',usuario.UpdateUsuario);
 router.get('/verDetalleUsuario/:id',usuario.ViewUsuario);
 router.delete('/eliminarUsuario/:id',usuario.EliminarUsuario);
-//rutas de preguntas
-router.put('/editarPregunta/:id',pregunta.UpdatePregunta)
-router.get('/listarUsuario',usuario.ListarUsuario);//funcionando
-router.post('/nuevoUsuario',usuario.CreateUsuario);//funcioando
-router.put('/editarUsuario',usuario.UpdateUsuario);//revisar
 //rutas de archivo
 router.get('/listarArchivo',archivo.ListarArchivo);//funcionando
 router.post('/NuevoArchivo',archivo.CreateArchivo);//funcionando
@@ -33,8 +28,8 @@ router.post('/NuevoArchivo',archivo.CreateArchivo);//funcionando
 router.get('/listarPregunta',pregunta.ListarPregunta);//funcionando
 router.post('/NuevaPregunta',pregunta.CreatePregunta);//funcioando
 //rutas respuesta
-router.get('/listarRespuesta',respuesta.ListarRespuesta);
-router.post('/NuevaRespuesta',respuesta.CreateRespuesta);
+router.get('/listarRespuesta',respuesta.ListarRespuesta);//funcioanado
+router.post('/NuevaRespuesta',respuesta.CreateRespuesta);//funcioando
 
 
 /* GET home page. 

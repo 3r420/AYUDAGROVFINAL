@@ -9,6 +9,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      pregunta_id: {
+        type: Sequelize.INTEGER
+      },
      
       descripcion: {
         type: Sequelize.STRING
@@ -17,9 +20,7 @@ module.exports = {
         type: Sequelize.STRING
       },
      
-      pregunta_id: {
-        type: Sequelize.INTEGER
-      },
+     
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     hora_fecha: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Respuesta',
+    modelName:'Respuesta',
     tableName:'respuesta'
   });
   return Respuesta;
