@@ -10,7 +10,7 @@ module.exports={
       },  
 
      CreatePregunta(req, res){
-          return pregunta.create({
+               return pregunta.create({
                descripcion: req.body.descripcion,
                hora_fecha: req.body.hora_fecha,
           })
