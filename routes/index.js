@@ -7,6 +7,8 @@ var router = express.Router();
 const categoria = require ('../controllers/categoria_controller');
 const usuario = require ('../controllers/usuario_controller');
 const archivo = require ('../controllers/archivo_controller');
+const pregunta= require ('../controllers/pregunta_controller');
+const respuesta = require ('../controllers/respuesta_controller');
 
 
 
@@ -18,8 +20,14 @@ router.get('/listarUsuario',usuario.ListarUsuario);//funcionando
 router.post('/nuevoUsuario',usuario.CreateUsuario);//funcioando
 router.put('/editarUsuario',usuario.UpdateUsuario);//revisar
 //rutas de archivo
-router.get('/listarArchivo',archivo.ListarArchivo)//funcionando
-router.post('NuevoArchivo',archivo.CreateArchivo)
+router.get('/listarArchivo',archivo.ListarArchivo);//funcionando
+router.post('/NuevoArchivo',archivo.CreateArchivo);//funcionando
+//rutas de pregunta
+router.get('/listarPregunta',pregunta.ListarPregunta);//funcionando
+router.post('/NuevaPregunta',pregunta.CreatePregunta);//funcioando
+//rutas respuesta
+router.get('/listarRespuesta',respuesta.ListarRespuesta);
+router.post('/NuevaRespuesta',respuesta.CreateRespuesta);
 
 
 /* GET home page. 

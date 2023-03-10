@@ -14,12 +14,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Respuesta.init({
-    id_respuesta: DataTypes.INTEGER,
-    descripcion: DataTypes.STRING,
-    hora_fecha: DataTypes.STRING,
-    hora_de_publicacion: DataTypes.STRING,
+    id_respuesta: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER 
+    },
     pregunta_id: DataTypes.INTEGER,
-    fecha_de_publicacion: DataTypes.STRING
+    descripcion: DataTypes.STRING,
+    hora_fecha: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Respuesta',

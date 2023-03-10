@@ -19,7 +19,7 @@ module.exports={
         return archivo.create({
              id_archivo:req.body.id_archivo,
              nombre_archivo: req.body.nombre_archivo,
-             url: req.body.url,
+             url: req.body.url
              
         })
          

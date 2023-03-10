@@ -3,7 +3,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('respuesta', {
-      id: {
+       id_respuesta: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -16,14 +16,9 @@ module.exports = {
       hora_fecha: {
         type: Sequelize.STRING
       },
-      hora_de_publicacion: {
-        type: Sequelize.STRING
-      },
+     
       pregunta_id: {
         type: Sequelize.INTEGER
-      },
-      fecha_de_publicacion: {
-        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
