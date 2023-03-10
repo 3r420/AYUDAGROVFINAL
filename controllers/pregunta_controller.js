@@ -19,30 +19,44 @@ module.exports={
           .catch(error => res.status(400).send(error))
      },
      UpdatePregunta(req, res){
-          return pregunta.update({
+          return pregunta
+          .update(
+               {
             descripcion: req.body.descripcion,
             hora_fecha: req.body.hora_fecha,
           },
           {
                where: {
-                    id: req.params.id,
+                    id_pregunta: req.params.id,
                },
           }
           )
           
-          .then(pregunta => res.status(200).send(pregunta))
+          .then((result) => {
+               res.json(result);
+          })
           .catch(error => res.status(400).send(error))
      },
      EliminarPregunta(req,res) {
           return pregunta.destroy({
                where: {
-                    id: req.params.id
+                    id_pregunta: req.params.id
                }
           }
           )
 
-          .then(pregunta => res.status(200).send(pregunta))
+          .then(() => res.status(200).send(pregunta))
           .catch(error => res.status(400).send(error))
      },
+     ViewPregunta(req, res){
+          
+          return pregunta.findOne(
+               {where: {
+                    id_pregunta : req.params.id
+               }})
+          
+          .then(pregunta => res.status(200).send(pregunta))
+          .catch(error => res.status(400).send(error))
+     }
 
 }

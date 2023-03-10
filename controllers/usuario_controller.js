@@ -24,10 +24,35 @@ module.exports={
           .then(usuario => res.status(200).send(usuario))
           .catch(error => res.status(400).send(error))
      },
-     UpdateUsuario(req, res){
-          const id_quellega = 1
+     ViewUsuario(req, res){
+          const id_quellega = 1;
 
-          const respuesta = usuario.findOne({where: {id_usuario : id_quellega}})
+          return usuario.findOne(
+               {where: {
+                    id_usuario : id_quellega
+               }})
+          
+          .then(usuario => res.status(200).send(usuario))
+          .catch(error => res.status(400).send(error))
+     },
+     EliminarUsuario(req,res) {
+          
+          return usuario.destroy({
+               where: {
+                    id_usuario: req.params.id
+               }
+          }
+          )
+
+          .then(() => res.status(200).send('Eliminado'))
+          .catch(error => res.status(400).send(error))
+     },
+     UpdateUsuario(req, res){
+
+          return usuario.findOne({
+               
+               where: {
+                    id_usuario : req.params.id}})
           // .then(
           //      usuario => {
           //           // console.log(usuario.dataValues.nombre);
@@ -40,9 +65,10 @@ module.exports={
           //      }
           //      )
           // .catch(error => res.status(400).send(error))
-          respuesta.nombre = req.body.nombre
-          respuesta.save();
-          return "se guardó"
+          // respuesta.nombre = req.body.nombre
+          //respuesta.save();
+          .then(usuario => res.status(200).send(usuario))
+          .catch(error => res.status(400).send(error))
 
                
                respuesta.correo_electronico = req.body.correo_electronico
@@ -84,16 +110,4 @@ module.exports={
           // .then(usuario => res.status(200).send(usuario))
           // .catch(error => res.status(400).send(error))
      },
-     EliminarUsuario(req,res) {
-          return usuario.destroy({
-               where: {
-                    id: req.params.id
-               }
-          }
-          )
-
-          .then(usuario => res.status(200).send(usuario))
-          .catch(error => res.status(400).send(error))
-     },
-
 }
