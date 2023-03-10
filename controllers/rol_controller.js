@@ -4,25 +4,59 @@ const rol = require('../models/rol');
 
 
 
-module.exports={
+module.exports = {
 
-    ListarRol(req,res){
+    ListarRol(req, res) {
         return rol.findAll({})
-        .then(rol=>res.status(200).send(rol))
-        .catch(error=>res.status(400).send(error));
+            .then(rol => res.status(200).send(rol))
+            .catch(error => res.status(400).send(error));
     },
 
 
-    CreateRol(req, res){
+    CreateRol(req, res) {
         return rol.create({
-             id_rol:req.body.id_rol,
-             nombre: req.body.nombre,
-             
-             
+            nombre: req.body.nombre,
+
+
         })
-         
-        .then(agricultor => res.status(200).send(agricultor))
-        .catch(error => res.status(400).send(error))
-   },
-   
+
+        .then(rol => res.status(200).send(rol))
+            .catch(error => res.status(400).send(error))
+    },
+    UpdateRol(req, res) {
+        return rol.update({
+            nombre: req.body.nombre,
+        }, {
+            where: {
+                id_rol: req.params.id,
+            },
+        })
+
+        .then((result) => {
+                res.json(result);
+            })
+            .catch(error => res.status(400).send(error))
+    },
+    EliminarRol(req, res) {
+        return rol.destroy({
+            where: {
+                id_rol: req.params.id
+            }
+        })
+
+        .then(() => res.status(200).send('Eliminado'))
+            .catch(error => res.status(400).send(error))
+    },
+    ViewRol(req, res) {
+
+        return rol.findOne({
+            where: {
+                id_rol: req.params.id
+            }
+        })
+
+        .then(rol => res.status(200).send(rol))
+            .catch(error => res.status(400).send(error))
+    }
+
 }
