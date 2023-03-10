@@ -6,13 +6,9 @@ var router = express.Router();
 //constantes del llamado a los controladores
 const categoria = require ('../controllers/categoria_controller');
 const usuario = require ('../controllers/usuario_controller');
-<<<<<<< HEAD
-const pregunta = require ('../controllers/pregunta_controller');
-=======
 const archivo = require ('../controllers/archivo_controller');
 const pregunta= require ('../controllers/pregunta_controller');
 const respuesta = require ('../controllers/respuesta_controller');
->>>>>>> 9d321a8333d3f61a2abec59eb042ce07ddc4735e
 
 
 
@@ -20,7 +16,6 @@ const respuesta = require ('../controllers/respuesta_controller');
 router.get('/listarCategoria',categoria.ListarCategoria);//funcionando
 router.post('/nuevaCategoria',categoria.CreateCategoria);//funcionando
 //rutas de usuario
-<<<<<<< HEAD
 router.get('/listarUsuario',usuario.ListarUsuario);
 router.post('/nuevoUsuario',usuario.CreateUsuario);
 router.put('/editarUsuario/:id',usuario.UpdateUsuario);
@@ -28,7 +23,6 @@ router.get('/verDetalleUsuario/:id',usuario.ViewUsuario);
 router.delete('/eliminarUsuario/:id',usuario.EliminarUsuario);
 //rutas de preguntas
 router.put('/editarPregunta/:id',pregunta.UpdatePregunta)
-=======
 router.get('/listarUsuario',usuario.ListarUsuario);//funcionando
 router.post('/nuevoUsuario',usuario.CreateUsuario);//funcioando
 router.put('/editarUsuario',usuario.UpdateUsuario);//revisar
@@ -41,7 +35,6 @@ router.post('/NuevaPregunta',pregunta.CreatePregunta);//funcioando
 //rutas respuesta
 router.get('/listarRespuesta',respuesta.ListarRespuesta);
 router.post('/NuevaRespuesta',respuesta.CreateRespuesta);
->>>>>>> 9d321a8333d3f61a2abec59eb042ce07ddc4735e
 
 
 /* GET home page. 
