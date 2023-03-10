@@ -1,7 +1,7 @@
 const {Model } = require('sequelize');
 const { QueryError } = require('sequelize');
 const Sequelize = require ('sequelize');
-const archivo = require ('../models/archivo');
+const archivo = require ('../models').Archivo;
 
 
 

@@ -6,16 +6,20 @@ var router = express.Router();
 //constantes del llamado a los controladores
 const categoria = require ('../controllers/categoria_controller');
 const usuario = require ('../controllers/usuario_controller');
+const archivo = require ('../controllers/archivo_controller');
 
 
 
 //rutas de categorias
-router.get('/listarCategoria',categoria.ListarCategoria);
-router.post('/nuevaCategoria',categoria.CreateCategoria);
+router.get('/listarCategoria',categoria.ListarCategoria);//funcionando
+router.post('/nuevaCategoria',categoria.CreateCategoria);//funcionando
 //rutas de usuario
-router.get('/listarUsuario',usuario.ListarUsuario);
-router.post('/nuevoUsuario',usuario.CreateUsuario);
-router.put('/editarUsuario',usuario.UpdateUsuario);
+router.get('/listarUsuario',usuario.ListarUsuario);//funcionando
+router.post('/nuevoUsuario',usuario.CreateUsuario);//funcioando
+router.put('/editarUsuario',usuario.UpdateUsuario);//revisar
+//rutas de archivo
+router.get('/listarArchivo',archivo.ListarArchivo)//funcionando
+router.post('NuevoArchivo',archivo.CreateArchivo)
 
 
 /* GET home page. 
