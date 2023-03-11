@@ -1,42 +1,43 @@
 const { Model } = require('sequelize');
 const { QueryError } = require('sequelize');
 const Sequelize = require('sequelize');
-const categoria = require('../models').Categoria;
-// const Categoria =require('../models/categoria');
-
+const subcategoria = require('../models').Subcategoria;
 
 
 
 module.exports = {
 
-    ListarCategoria(req, res) {
+    ListarSubcategoria(req, res) {
         console.log('yes')
-        return categoria.findAll({})
+        return subcategoria.findAll({})
 
 
-        .then(categoria => res.status(200).send(categoria))
+        .then(subcategoria => res.status(200).send(subcategoria))
             .catch(error => res.status(400).send(error.toString()))
     },
 
 
-    CreateCategoria(req, res) {
-        return categoria.create({
+    CreateSubcategoria(req, res) {
+        return subcategoria.create({
             descripcion: req.body.descripcion,
-            titulo: req.body.titulo,
+            categoria_id: req.body.categoria_id,
+            titulo: req.body.titulo
 
         })
 
-        .then(categoria => res.status(200).send(categoria))
+        .then(subcategoria => res.status(200).send(subcategoria))
             .catch(error => res.status(400).send(error))
     },
-    UpdateCategoria(req, res) {
-        return categoria
+    UpdateSubcategoria(req, res) {
+        return subcategoria
             .update({
                 descripcion: req.body.descripcion,
+                categoria_id: req.body.categoria_id,
                 titulo: req.body.titulo,
+
             }, {
                 where: {
-                    id_categoria: req.params.id,
+                    id_subcategoria: req.params.id,
                 },
             })
 
@@ -45,25 +46,25 @@ module.exports = {
             })
             .catch(error => res.status(400).send(error))
     },
-    EliminarCategoria(req, res) {
-        return categoria.destroy({
+    EliminarSubcategoria(req, res) {
+        return subcategoria.destroy({
             where: {
-                id_categoria: req.params.id
+                id_subcategoria: req.params.id
             }
         })
 
         .then(() => res.status(200).send('Eliminado'))
             .catch(error => res.status(400).send(error))
     },
-    ViewCategoria(req, res) {
+    ViewSubcategoria(req, res) {
 
-        return categoria.findOne({
+        return subcategoria.findOne({
             where: {
-                id_categoria: req.params.id
+                id_subcategoria: req.params.id
             }
         })
 
-        .then(categoria => res.status(200).send(categoria))
+        .then(subcategoria => res.status(200).send(subcategoria))
             .catch(error => res.status(400).send(error))
     }
 
