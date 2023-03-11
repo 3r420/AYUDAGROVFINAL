@@ -9,6 +9,7 @@ const usuario = require ('../controllers/usuario_controller');
 const archivo = require ('../controllers/archivo_controller');
 const pregunta= require ('../controllers/pregunta_controller');
 const respuesta = require ('../controllers/respuesta_controller');
+const rol = require ('../controllers/rol_controller')
 
 
 
@@ -30,6 +31,12 @@ router.post('/NuevaPregunta',pregunta.CreatePregunta);//funcioando
 //rutas respuesta
 router.get('/listarRespuesta',respuesta.ListarRespuesta);//funcioanado
 router.post('/NuevaRespuesta',respuesta.CreateRespuesta);//funcioando
+//rutas rol
+router.get('/LiatrRol',rol.ListarRol)//funcionando
+router.post('/NuevoRol',rol.CreateRol)//funcionando
+//subcategoria
+
+
 
 
 /* GET home page. 

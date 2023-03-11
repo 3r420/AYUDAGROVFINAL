@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const rol = require('../models/rol');
+const rol = require('../models').Rol;
 
 
 
