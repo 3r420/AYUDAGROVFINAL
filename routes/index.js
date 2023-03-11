@@ -9,7 +9,8 @@ const usuario = require ('../controllers/usuario_controller');
 const archivo = require ('../controllers/archivo_controller');
 const pregunta= require ('../controllers/pregunta_controller');
 const respuesta = require ('../controllers/respuesta_controller');
-const rol = require ('../controllers/rol_controller')
+const rol = require ('../controllers/rol_controller');
+const sugerencia =require ('../controllers/sugerencia_controller')
 
 
 
@@ -34,19 +35,28 @@ router.get('/verDetalleArchivo/:id', archivo.ViewArchivo); //funcionando
 router.delete('/eliminarArchivo/:id', archivo.EliminarArchivo); //funcionando
 //rutas de pregunta
 router.get('/listarPregunta', pregunta.ListarPregunta); //funcionando
-router.post('/nuevaPregunta', pregunta.CreatePregunta); //funcioando
+router.post('/nuevaPregunta', pregunta.CreatePregunta); //funcionando
 router.put('/editarPregunta/:id', pregunta.UpdatePregunta); //funcionando
 router.get('/verDetallePregunta/:id', pregunta.ViewPregunta); //funcionando
 router.delete('/eliminarPregunta/:id', pregunta.EliminarPregunta); //funcionando
 //rutas respuesta
-router.get('/listarRespuesta', respuesta.ListarRespuesta); //funcioanado
-router.post('/nuevaRespuesta', respuesta.CreateRespuesta); //funcioando
+router.get('/listarRespuesta', respuesta.ListarRespuesta); //funcionanado
+router.post('/nuevaRespuesta', respuesta.CreateRespuesta); //funcionando
 router.put('/editarRespuesta/:id', respuesta.UpdateRespuesta); //funcionando
 router.get('/verDetalleRespuesta/:id', respuesta.ViewRespuesta); //funcionando
 router.delete('/eliminarRespuesta/:id', respuesta.EliminarRespuesta); //funcionando
 //rutas rol
-router.get('/LiatrRol',rol.ListarRol)//funcionando
-router.post('/NuevoRol',rol.CreateRol)//funcionando
+router.get('/listarRol',rol.ListarRol); //funcionando
+router.post('/nuevoRol',rol.CreateRol);//funcionando
+router.put('/editarRol/:id', rol.UpdateRol); //funcionando
+router.get('/verDetalleRol/:id', rol.ViewRol); //funcionando
+router.delete('/eliminarRol/:id', rol.EliminarRol); //funcionando
+//rutas sugerencia
+router.get('/listarSugerencia',sugerencia.ListarSugerencia); //funcionando
+router.post('/nuevoSugerencia',sugerencia.CreateSugerencia);//funcionando
+router.put('/editarSugerencia/:id', sugerencia.UpdateSugerencia); //funcionando
+router.get('/verDetalleSugerencia/:id', sugerencia.ViewSugerencia); //funcionando
+router.delete('/eliminarSugerencia/:id', sugerencia.EliminarSugerencia); //funcionando
 //subcategoria
 
 
