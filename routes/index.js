@@ -14,9 +14,6 @@ const sugerencia = require ('../controllers/sugerencia_controller');
 const subcategoria = require ('../controllers/subcategoria_controller');
 const valorar_respuesta = require ('../controllers/valorar_respuesta_controller')
 
-
-
-
 //rutas de categorias
 router.get('/listarCategoria', categoria.ListarCategoria); //funcionando
 router.post('/nuevaCategoria', categoria.CreateCategoria); //funcionando
