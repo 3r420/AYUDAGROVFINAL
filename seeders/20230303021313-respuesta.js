@@ -6,9 +6,7 @@ module.exports = {
     return queryInterface.bulkInsert('respuesta', [{
       descripcion: 'respuestas claras ',
       hora_fecha: 'agosto 2023',
-      hora_de_publicacion: 'siete de la mañana',
       pregunta_id:1,
-      fecha_de_publicacion:'agosto 19',
       createdAt: new Date(),
       updatedAt: new Date()
     }]);

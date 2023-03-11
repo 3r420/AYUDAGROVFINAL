@@ -19,12 +19,7 @@ module.exports = {
             hora_fecha: {
                 type: Sequelize.STRING
             },
-            hora_de_publicacion: {
-                type: Sequelize.STRING
-            },
-            fecha_de_publicacion: {
-                type: Sequelize.STRING
-            },
+           
 
             createdAt: {
                 allowNull: false,
