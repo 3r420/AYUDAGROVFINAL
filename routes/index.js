@@ -4,20 +4,13 @@ var router = express.Router();
 
 
 //constantes del llamado a los controladores
-<<<<<<< HEAD
 const categoria = require ('../controllers/categoria_controller');
 const usuario = require ('../controllers/usuario_controller');
 const archivo = require ('../controllers/archivo_controller');
 const pregunta= require ('../controllers/pregunta_controller');
 const respuesta = require ('../controllers/respuesta_controller');
 const rol = require ('../controllers/rol_controller')
-=======
-const categoria = require('../controllers/categoria_controller');
-const usuario = require('../controllers/usuario_controller');
-const archivo = require('../controllers/archivo_controller');
-const pregunta = require('../controllers/pregunta_controller');
-const respuesta = require('../controllers/respuesta_controller');
->>>>>>> Harry
+
 
 
 
