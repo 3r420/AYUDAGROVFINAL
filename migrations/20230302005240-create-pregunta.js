@@ -9,12 +9,24 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      subcategoria_id:{
+        type:Sequelize.INTEGER,
+        references:{
+          model:{tableName:'subcategoria',
+        key:'id_subcategoria'}
+        }
+      },
+      usuario_id:{
+        type:Sequelize.INTEGER,
+        references:{
+          model:{tableName:'rol',
+        key:'id_rol'}
+        }
+      },
       descripcion: {
         type: Sequelize.STRING
       },
-      hora_fecha: {
-        type: Sequelize.STRING
-      },
+     
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
