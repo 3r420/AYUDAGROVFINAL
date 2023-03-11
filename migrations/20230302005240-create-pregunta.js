@@ -19,8 +19,8 @@ module.exports = {
       usuario_id:{
         type:Sequelize.INTEGER,
         references:{
-          model:{tableName:'rol',
-        key:'id_rol'}
+          model:{tableName:'usuario',
+        key:'id_usuario'}
         }
       },
       descripcion: {
