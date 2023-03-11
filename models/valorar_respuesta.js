@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     usuario_id: DataTypes.INTEGER,
     respuesta_id: DataTypes.INTEGER,
-    calificacion: DataTypes.STRING
+    calificacion: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Valorar_Respuesta',

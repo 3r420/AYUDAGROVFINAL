@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const valorar_respuesta = require('../models/valorar_respuesta');
+const valorar_respuesta = require('../models').Valorar_Respuesta;
 
 
 

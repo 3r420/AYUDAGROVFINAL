@@ -17,7 +17,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       calificacion: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

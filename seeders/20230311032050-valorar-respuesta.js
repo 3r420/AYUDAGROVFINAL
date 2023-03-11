@@ -3,15 +3,15 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('respuesta', [{
-      descripcion: 'respuestas claras ',
-      pregunta_id:1,
+    return queryInterface.bulkInsert('valorar_respuesta', [
+      {
+      calificacion: 5,
       createdAt: new Date(),
       updatedAt: new Date()
-    }]);
+    }
+  ]);
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('respuesta', null, {});
+    return queryInterface.bulkDelete('valorar_respuesta', null, {});
   }
-  
 };
