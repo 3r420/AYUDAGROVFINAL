@@ -10,7 +10,8 @@ const archivo = require ('../controllers/archivo_controller');
 const pregunta= require ('../controllers/pregunta_controller');
 const respuesta = require ('../controllers/respuesta_controller');
 const rol = require ('../controllers/rol_controller');
-const sugerencia =require ('../controllers/sugerencia_controller')
+const sugerencia =require ('../controllers/sugerencia_controller');
+const subcategoria=require('../controllers/subcategoria_controller');
 
 
 
@@ -58,6 +59,7 @@ router.put('/editarSugerencia/:id', sugerencia.UpdateSugerencia); //funcionando
 router.get('/verDetalleSugerencia/:id', sugerencia.ViewSugerencia); //funcionando
 router.delete('/eliminarSugerencia/:id', sugerencia.EliminarSugerencia); //funcionando
 //subcategoria
+router.ger('/ListarSubcategoria',subcategoria.ListarSubcategoria);
 
 
 

@@ -12,15 +12,15 @@ module.exports = {
       subcategoria_id:{
         type:Sequelize.INTEGER,
         references:{
-          model:{tableName:'subcategoria',
-        key:'id_subcategoria'}
+          model:{tableName:'subcategoria'},
+        key:'id_subcategoria'
         }
       },
       usuario_id:{
         type:Sequelize.INTEGER,
         references:{
-          model:{tableName:'usuario',
-        key:'id_usuario'}
+          model:{tableName:'usuario'},
+        key:'id_usuario'
         }
       },
       descripcion: {

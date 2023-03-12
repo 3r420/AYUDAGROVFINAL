@@ -11,10 +11,18 @@ module.exports = {
       },
      
       respuesta_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model:{tableName:'respuesta'},
+          key:'id_respuesta'
+        }
       },
-      archivo: {
-        type: Sequelize.INTEGER
+      archivo_id: {
+        type: Sequelize.INTEGER,
+        references:{
+          model:{tableName:'archivo'},
+          key:'id_archivo'
+        }
       },
       createdAt: {
         allowNull: false,

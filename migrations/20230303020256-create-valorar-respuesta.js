@@ -11,10 +11,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       respuesta_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model:{tableName:'respuesta'},
+          key:'id_respuesta'
+        }
       },
       usuario_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model:{tableName:'usuario'},
+          key:'id_usuario'
+        }
       },
       calificacion: {
         type: Sequelize.STRING

@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     primaryKey: true,
     type:DataTypes.INTEGER},
     respuesta_id: DataTypes.INTEGER,
-    archivo: DataTypes.INTEGER
+    archivo_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'respuesta_archivo',

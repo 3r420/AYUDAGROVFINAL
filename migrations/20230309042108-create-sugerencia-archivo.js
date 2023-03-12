@@ -11,10 +11,18 @@ module.exports = {
       },
       
       archivo_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model:{tableName:'archivo'},
+          key:'id_archivo'
+        }
       },
       sugerencia_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model:{tableName:'sugerencia'},
+          key:'id_sugerencia'
+        }
       },
       createdAt: {
         allowNull: false,
