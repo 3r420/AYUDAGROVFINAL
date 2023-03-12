@@ -11,6 +11,7 @@ module.exports = {
 
     CreateUsuario(req, res) {
         return usuario.create({
+            rol_id:req.body.rol_id,
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             correo_electronico: req.body.correo_electronico,

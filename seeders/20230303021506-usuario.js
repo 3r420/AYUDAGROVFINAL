@@ -5,6 +5,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('usuario', [
       {
+      rol_id: 1,  
       nombre: 'Yennifer Nataly', 
       apellido: 'Martinez Ortega',
       correo_electronico: 'yennifernataly2003@gmail.com',
