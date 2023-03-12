@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.Archivo,{foreignKey:'archivo_id'})
     }
   }
   Pregunta_archivo.init({
@@ -20,8 +21,11 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type:DataTypes.INTEGER},
     pregunta_id: DataTypes.INTEGER,
-    archivo_id: DataTypes.INTEGER
-  }, {
+    archivo_id: {
+      type:DataTypes.INTEGER,
+      references:{model:"Archivo",key:"id_archivo"},
+  },
+ }, {
     sequelize,
     modelName: 'Pregunta_archivo',
     tableName:'pregunta_archivos'

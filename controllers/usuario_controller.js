@@ -28,6 +28,7 @@ module.exports = {
     },
     UpdateUsuario(req, res) {
         return usuario.update({
+            rol_id:req.body.rol_id,
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             correo_electronico: req.body.correo_electronico,

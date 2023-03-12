@@ -20,8 +20,15 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
+    subcategoria_id:{
+      type:DataTypes.INTEGER,
+      references:{model:'Subcategoria',key:'id_subcategoria'}
+    },
+    usuario_id:{
+      type:DataTypes.INTEGER,
+      references:{model:'Usuario',key:'id_usuario'}
+    },
     descripcion: DataTypes.STRING,
-    hora_fecha: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Pregunta',

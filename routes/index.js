@@ -59,7 +59,7 @@ router.put('/editarSugerencia/:id', sugerencia.UpdateSugerencia); //funcionando
 router.get('/verDetalleSugerencia/:id', sugerencia.ViewSugerencia); //funcionando
 router.delete('/eliminarSugerencia/:id', sugerencia.EliminarSugerencia); //funcionando
 //subcategoria
-router.ger('/ListarSubcategoria',subcategoria.ListarSubcategoria);
+router.get('/ListarSubcategoria',subcategoria.ListarSubcategoria);
 
 
 

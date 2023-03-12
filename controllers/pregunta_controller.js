@@ -12,7 +12,7 @@ module.exports = {
     CreatePregunta(req, res) {
         return pregunta.create({
             descripcion: req.body.descripcion,
-            hora_fecha: req.body.hora_fecha,
+           
         })
 
         .then(pregunta => res.status(200).send(pregunta))
@@ -22,7 +22,7 @@ module.exports = {
         return pregunta
             .update({
                 descripcion: req.body.descripcion,
-                hora_fecha: req.body.hora_fecha,
+           
             }, {
                 where: {
                     id_pregunta: req.params.id,
