@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Sugerencia_archivo',
-    tableName:'sugerencia_archivo'
+    tableName:'sugerencia_archivos'
   });
   return Sugerencia_archivo;
 

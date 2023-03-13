@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasMany(models.Pregunta_archivo,{foreignKey:'archivo_id'});
-      this.hasMany(models.Sugerencia_archivo,{foreignKey:'archivo_id'})
+      this.hasMany(models.Sugerencia_archivo,{foreignKey:'archivo_id'});
+      this.hasMany(models.Respuesta_archivo,{foreignKey:'archivo_id'});
     }
   }
   Archivo.init({
