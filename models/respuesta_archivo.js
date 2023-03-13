@@ -11,15 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+       this.hasMany(models.Archivo,{foreignKey:'archivo_id'});
     }
   }
   Respuesta_archivo.init({
     id_respuesta_archivo:  {allowNull: false,
-    autoIncrement: true,
-    primaryKey: true,
-    type:DataTypes.INTEGER},
-    respuesta_id: DataTypes.INTEGER,
-    archivo_id: DataTypes.INTEGER
+        autoIncrement: true,
+        primaryKey: true,
+        type:DataTypes.INTEGER},
+    respuesta_id: {type:DataTypes.INTEGER,
+        references:{model:"Respuesta",key:'id_respuesta'}},
+     archivo_id: {type:DataTypes.INTEGER,
+        references:{model:'Aechivo',key:'id_archivo'}},
   }, {
     sequelize,
     modelName: 'Respuesta_archivo',
