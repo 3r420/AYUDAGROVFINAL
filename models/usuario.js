@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.hasMany(models.Pregunta,{foreignKey:'usuario_id'})
     }
   }
   Usuario.init({
@@ -20,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    rol_id:DataTypes.INTEGER,
+    rol_id:{type:DataTypes.INTEGER,
+      references:{model:'Rol',key:'id_rol'}},
     nombre: DataTypes.STRING,
     apellido: DataTypes.STRING,
     correo_electronico: DataTypes.STRING,
