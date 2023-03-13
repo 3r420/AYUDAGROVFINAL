@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.Archivo,{foreignKey:'archivo_id'})
+      this.belongsTo(models.Archivo,{foreignKey:'archivo_id'}),
+      this.belongsTo(models.Pregunta,{foreignKey:'pregunta_id'})
     }
   }
   Pregunta_archivo.init({
@@ -20,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true,
       type:DataTypes.INTEGER},
-    pregunta_id: DataTypes.INTEGER,
+    pregunta_id: {type:DataTypes.INTEGER,
+      references:{model:'Pregunta',key:'id_pregunta'}},
     archivo_id: {
       type:DataTypes.INTEGER,
       references:{model:"Archivo",key:"id_archivo"},
