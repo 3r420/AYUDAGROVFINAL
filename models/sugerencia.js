@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.Subcategoria,{foreignKey:'subcategorias_id'})
+      this.belongsTo(models.Subcategoria,{foreignKey:'subcategorias_id'}),
+      this.hasMany(models.Sugerencia_archivo,{foreignKey:'sugerencia_id'})
     }
   }
   Sugerencia.init({
@@ -24,7 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     subcategorias_id: {type:DataTypes.INTEGER,
       references:{models:'Subcategoria',key:'id_subcategoria'}},
     descripcion: DataTypes.STRING,
-    usuario_id: DataTypes.INTEGER
+    usuario_id: {type:DataTypes.INTEGER,
+    references:{model:'Usuario',key:'id_usuario'}},
   }, {
     sequelize,
     modelName: 'Sugerencia',
