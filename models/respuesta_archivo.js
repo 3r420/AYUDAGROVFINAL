@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         type:DataTypes.INTEGER},
     respuesta_id: {type:DataTypes.INTEGER,
         references:{model:"Respuesta",key:'id_respuesta'}},
-     archivo_id: {type:DataTypes.INTEGER,
+    archivo_id: {type:DataTypes.INTEGER,
         references:{model:'Aechivo',key:'id_archivo'}},
   }, {
     sequelize,
