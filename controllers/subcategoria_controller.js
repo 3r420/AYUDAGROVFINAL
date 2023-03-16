@@ -9,7 +9,9 @@ module.exports = {
 
     ListarSubcategoria(req, res) {
         console.log('yes')
-        return subcategoria.findAll({})
+        return subcategoria.findAll({
+            // include: {model:preguntaArchivo,},require:'true',
+        })
 
 
         .then(subcategoria => res.status(200).send(subcategoria))

@@ -10,8 +10,10 @@ const archivo = require ('../controllers/archivo_controller');
 const pregunta= require ('../controllers/pregunta_controller');
 const respuesta = require ('../controllers/respuesta_controller');
 const rol = require ('../controllers/rol_controller');
-const sugerencia =require ('../controllers/sugerencia_controller');
-const subcategoria=require('../controllers/subcategoria_controller');
+const sugerencia = require ('../controllers/sugerencia_controller');
+const subcategoria = require('../controllers/subcategoria_controller');
+const valorar_respuesta = require('../controllers/valorar_respuesta_controller');
+
 
 
 
@@ -60,6 +62,17 @@ router.get('/verDetalleSugerencia/:id', sugerencia.ViewSugerencia); //funcionand
 router.delete('/eliminarSugerencia/:id', sugerencia.EliminarSugerencia); //funcionando
 //subcategoria
 router.get('/ListarSubcategoria',subcategoria.ListarSubcategoria);
+router.post('/nuevoSubcategoria',subcategoria.CreateSubcategoria);//funcionando
+router.put('/editarSubcategoria/:id', subcategoria.UpdateSubcategoria); //funcionando
+router.get('/verDetalleSubcategoria/:id', subcategoria.ViewSubcategoria); //funcionando
+router.delete('/eliminarSubcategoria/:id', subcategoria.EliminarSubcategoria); //funcionando
+//rutas valorar_respuesta
+router.get('/listarValorarR',valorar_respuesta.ListarValorarR); //funcionando
+router.post('/nuevoValorarR',valorar_respuesta.CreateValorarR);//funcionando
+router.put('/editarValorarR/:id', valorar_respuesta.UpdateValorarR); //funcionando
+router.get('/verDetalleValorarR/:id', valorar_respuesta.ViewValorarR); //funcionando
+router.delete('/eliminarValorarR/:id', valorar_respuesta.EliminarValorarR); //funcionando
+
 
 
 

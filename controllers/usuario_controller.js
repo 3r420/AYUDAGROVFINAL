@@ -4,7 +4,9 @@ const usuario = require('../models').Usuario;
 
 module.exports = {
     ListarUsuario(req, res) {
-        return usuario.findAll({})
+        return usuario.findAll({
+            // include: {model:preguntaArchivo,},require:'true',
+        })
             .then(usuario => res.status(200).send(usuario))
             .catch(error => res.status(400).send(error));
     },

@@ -7,7 +7,9 @@ const rol = require('../models').Rol;
 module.exports = {
 
     ListarRol(req, res) {
-        return rol.findAll({})
+        return rol.findAll({
+            // include: {model:preguntaArchivo,},require:'true',
+        })
             .then(rol => res.status(200).send(rol))
             .catch(error => res.status(400).send(error));
     },

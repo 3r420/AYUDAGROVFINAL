@@ -7,7 +7,9 @@ const sugerencia = require('../models').Sugerencia;
 module.exports = {
 
     ListarSugerencia(req, res) {
-        return sugerencia.findAll({})
+        return sugerencia.findAll({
+            // include: {model:preguntaArchivo,},require:'true',
+        })
             .then(sugerencia => res.status(200).send(sugerencia))
             .catch(error => res.status(400).send(error));
     },

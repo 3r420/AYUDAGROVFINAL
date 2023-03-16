@@ -4,7 +4,9 @@ const pregunta = require('../models').Pregunta;
 
 module.exports = {
     ListarPregunta(req, res) {
-        return pregunta.findAll({})
+        return pregunta.findAll({
+            // include: {model:preguntaArchivo,},require:'true',
+        })
             .then(pregunta => res.status(200).send(pregunta))
             .catch(error => res.status(400).send(error));
     },

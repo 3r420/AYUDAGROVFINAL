@@ -10,8 +10,9 @@ const categoria = require('../models').Categoria;
 module.exports = {
 
     ListarCategoria(req, res) {
-        console.log('yes')
-        return categoria.findAll({})
+        return categoria.findAll({
+            // include: {model:preguntaArchivo,},require:'true',
+        })
 
 
         .then(categoria => res.status(200).send(categoria))
