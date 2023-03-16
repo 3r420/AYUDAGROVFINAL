@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasMany(models.Pregunta,{foreignKey:'usuario_id'}),
-      this.belongsTo(models.Rol,{foreignKey:'rol_id'})
+      this.belongsTo(models.Rol,{foreignKey:'rol_id'}),
+      this.hasMany(models.Valorar_Respuesta,{foreignKey:'usuario_id'})
     }
   }
   Usuario.init({

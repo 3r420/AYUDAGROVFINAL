@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       references:{models:'Subcategoria',key:'id_subcategoria'}},
     descripcion: DataTypes.STRING,
     usuario_id: {type:DataTypes.INTEGER,
-    references:{model:'Usuario',key:'id_usuario'}},
+      references:{model:'Usuario',key:'id_usuario'}},
   }, {
     sequelize,
     modelName: 'Sugerencia',

@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.Usuario,{foreignKey:'usuario_id'}),
+      this.belongsTo(models.Respuesta,{foreignKey:'respuesta_id'})
     }
   }
   Valorar_Respuesta.init({
@@ -20,8 +22,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey:true,
       type:DataTypes.INTEGER
     },
-    usuario_id: DataTypes.INTEGER,
-    respuesta_id: DataTypes.INTEGER,
+    usuario_id: {type:DataTypes.INTEGER,
+      references:{model:'Usuario',key:'id_usuario'}},
+    respuesta_id: {type:DataTypes.INTEGER,
+       references:{model:'Respuesta',key:'id_respuesta'}},
     calificacion: DataTypes.STRING
   }, {
     sequelize,
