@@ -56,7 +56,7 @@ router.get('/verDetalleRol/:id', rol.ViewRol); //funcionando
 router.delete('/eliminarRol/:id', rol.EliminarRol); //funcionando
 //rutas sugerencia
 router.get('/listarSugerencia',sugerencia.ListarSugerencia); //funcionando
-router.post('/nuevoSugerencia',sugerencia.CreateSugerencia);//funcionando
+router.post('/nuevaSugerencia',sugerencia.CreateSugerencia);//funcionando
 router.put('/editarSugerencia/:id', sugerencia.UpdateSugerencia); //funcionando
 router.get('/verDetalleSugerencia/:id', sugerencia.ViewSugerencia); //funcionando
 router.delete('/eliminarSugerencia/:id', sugerencia.EliminarSugerencia); //funcionando

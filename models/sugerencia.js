@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.belongsTo(models.Subcategoria,{foreignKey:'subcategorias_id'}),
-      this.hasMany(models.Sugerencia_archivo,{foreignKey:'sugerencia_id'})
+      this.hasMany(models.Sugerencia_archivo,{foreignKey:'sugerencia_id'}),
+      this.belongsTo(models.Usuario,{foreignKey:'usuario_id'})
     }
   }
   Sugerencia.init({
