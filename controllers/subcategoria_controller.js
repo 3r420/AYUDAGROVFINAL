@@ -2,7 +2,7 @@ const { Model } = require('sequelize');
 const { QueryError } = require('sequelize');
 const Sequelize = require('sequelize');
 const subcategoria = require('../models').Subcategoria;
-
+const categoria = require('../models').Categoria
 
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
     ListarSubcategoria(req, res) {
         console.log('yes')
         return subcategoria.findAll({
-            // include: {model:preguntaArchivo,},require:'true',
+             include: {model:categoria,},require:'true',
         })
 
 
@@ -33,8 +33,8 @@ module.exports = {
     UpdateSubcategoria(req, res) {
         return subcategoria
             .update({
-                descripcion: req.body.descripcion,
                 categoria_id: req.body.categoria_id,
+                descripcion: req.body.descripcion, 
                 titulo: req.body.titulo,
 
             }, {

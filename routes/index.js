@@ -62,7 +62,7 @@ router.get('/verDetalleSugerencia/:id', sugerencia.ViewSugerencia); //funcionand
 router.delete('/eliminarSugerencia/:id', sugerencia.EliminarSugerencia); //funcionando
 //subcategoria
 router.get('/ListarSubcategoria',subcategoria.ListarSubcategoria);
-router.post('/nuevoSubcategoria',subcategoria.CreateSubcategoria);//funcionando
+router.post('/nuevaSubcategoria',subcategoria.CreateSubcategoria);//funcionando
 router.put('/editarSubcategoria/:id', subcategoria.UpdateSubcategoria); //funcionando
 router.get('/verDetalleSubcategoria/:id', subcategoria.ViewSubcategoria); //funcionando
 router.delete('/eliminarSubcategoria/:id', subcategoria.EliminarSubcategoria); //funcionando
