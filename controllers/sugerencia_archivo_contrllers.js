@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const sugerencia_archivo = require('../models').Sugerencia_archivo;
-const s = require('../models').Archivo;
+const s = require('../models').Sugerencia;
 
 
 
