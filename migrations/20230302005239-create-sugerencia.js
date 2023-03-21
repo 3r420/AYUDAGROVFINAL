@@ -12,10 +12,10 @@ module.exports = {
     
       subcategoria_id: {
         type: Sequelize.INTEGER,
-        // references:{
-        //   model:{tableName:'subcategoria'},
-        //   key:'id_subcategoria'
-        // }
+        references:{
+          model:{tableName:'subcategoria'},
+          key:'id_subcategoria'
+        }
       },
       descripcion: {
         type: Sequelize.STRING

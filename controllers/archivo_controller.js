@@ -9,7 +9,7 @@ const archivo = require('../models').Archivo;
 
 module.exports = {
 
-    ListarArchivo(_, res) {
+    ListarArchivo(req, res) {
         return archivo.findAll({
           // include: {model:preguntaArchivo,},require:'true',
         })
