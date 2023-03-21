@@ -10,18 +10,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
     
-      subcategorias_id: {
+      subcategoria_id: {
         type: Sequelize.INTEGER,
-        references:{
-          model:{tableName:'subcategoria'},
-          key:'id_subcategoria'
-        }
+        // references:{
+        //   model:{tableName:'subcategoria'},
+        //   key:'id_subcategoria'
+        // }
       },
       descripcion: {
         type: Sequelize.STRING
       },
       usuario_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{model:{tableName:'usuario'},key:'id_usuario'},
       },
       createdAt: {
         allowNull: false,

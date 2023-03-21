@@ -9,7 +9,7 @@ module.exports = {
 
     ListarSugerencia(req, res) {
         return sugerencia.findAll({
-            include: {model:s,},require:'true',
+           // include: {model:s,},require:'true',
         })
             .then(sugerencia => res.status(200).send(sugerencia))
             .catch(error => res.status(400).send(error));
@@ -18,7 +18,7 @@ module.exports = {
 
     CreateSugerencia(req, res) {
         return sugerencia.create({
-            subcategorias_id: req.body.subcategorias_id,
+            subcategoria_id: req.body.subcategoria_id,
             descripcion: req.body.descripcion,
             usuario_id: req.body.usuario_id,
 

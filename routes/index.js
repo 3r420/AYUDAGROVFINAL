@@ -11,6 +11,7 @@ const pregunta= require ('../controllers/pregunta_controller');
 const respuesta = require ('../controllers/respuesta_controller');
 const rol = require ('../controllers/rol_controller');
 const sugerencia = require ('../controllers/sugerencia_controller');
+const sugerencia_archivo = require ('../controllers/sugerencia_archivo_contrllers');
 const subcategoria = require('../controllers/subcategoria_controller');
 const valorar_respuesta = require('../controllers/valorar_respuesta_controller');
 
@@ -72,7 +73,12 @@ router.post('/nuevoValorarR',valorar_respuesta.CreateValorarR);//funcionando
 router.put('/editarValorarR/:id', valorar_respuesta.UpdateValorarR); //funcionando
 router.get('/verDetalleValorarR/:id', valorar_respuesta.ViewValorarR); //funcionando
 router.delete('/eliminarValorarR/:id', valorar_respuesta.EliminarValorarR); //funcionando
-
+//rutas sugerencia_archivo
+router.get('/listarSugerencia_archivo',sugerencia_archivo.Listarsugerencia_archivo); //funcionando
+router.post('/nuevaSugerencia_archivo',sugerencia_archivo.Createsugerencia_archivo);//funcionando
+router.put('/editarSugerencia_archivo/:id', sugerencia_archivo.Updatesugerencia_archivo); //funcionando
+router.get('/verDetalleSugerencia_archivo/:id', sugerencia_archivo.Viewsugerencia_archivo); //funcionando
+router.delete('/eliminarSugerenci_archivoa/:id', sugerencia_archivo.Eliminarsugerencia_archivo); //funcionando
 
 
 

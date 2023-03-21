@@ -8,7 +8,7 @@ const categoria = require('../models').Categoria
 module.exports = {
 
     ListarSubcategoria(req, res) {
-        console.log('yes')
+  
         return subcategoria.findAll({
            //  include: {model:categoria,},require:'true',
         })
