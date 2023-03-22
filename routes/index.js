@@ -14,6 +14,7 @@ const sugerencia = require ('../controllers/sugerencia_controller');
 const sugerencia_archivo = require ('../controllers/sugerencia_archivo_contrllers');
 const subcategoria = require('../controllers/subcategoria_controller');
 const valorar_respuesta = require('../controllers/valorar_respuesta_controller');
+const pregunta_archivo = require('../controllers/pregunta_archivo_controller');
 
 
 
@@ -79,7 +80,12 @@ router.post('/nuevaSugerencia_archivo',sugerencia_archivo.Createsugerencia_archi
 router.put('/editarSugerencia_archivo/:id', sugerencia_archivo.Updatesugerencia_archivo); //funcionando
 router.get('/verDetalleSugerencia_archivo/:id', sugerencia_archivo.Viewsugerencia_archivo); //funcionando
 router.delete('/eliminarSugerenci_archivoa/:id', sugerencia_archivo.Eliminarsugerencia_archivo); //funcionando
-
+//rutas pregunta_archivo
+router.get('/listarPregunta_archivo',pregunta_archivo.Listarpregunta_archivo); //funcionando
+router.post('/nuevaPregunta_archivo',pregunta_archivo.Createpregunta_archivo);//funcionando
+router.put('/editarPregunta_archivo/:id', pregunta_archivo.Updatepregunta_archivo); //funcionando
+router.get('/verDetallePregunts_archivo/:id', pregunta_archivo.Viewpregunta_archivo); //funcionando
+router.delete('/eliminarPregunta_archivoa/:id', pregunta_archivo.Eliminarpregunta_archivo); //funcionando
 
 
 
