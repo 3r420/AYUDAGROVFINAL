@@ -15,6 +15,7 @@ const sugerencia_archivo = require ('../controllers/sugerencia_archivo_contrller
 const subcategoria = require('../controllers/subcategoria_controller');
 const valorar_respuesta = require('../controllers/valorar_respuesta_controller');
 const pregunta_archivo = require('../controllers/pregunta_archivo_controller');
+const resspuesta_archivo = require('../controllers/respuesta_archivo_controller');
 
 
 
@@ -78,15 +79,21 @@ router.delete('/eliminarValorarR/:id', valorar_respuesta.EliminarValorarR); //fu
 //rutas sugerencia_archivo
 router.get('/listarSugerencia_archivo',sugerencia_archivo.Listarsugerencia_archivo); //funcionando
 router.post('/nuevaSugerencia_archivo',sugerencia_archivo.Createsugerencia_archivo);//funcionando
-router.put('/editarSugerencia_archivo/:id', sugerencia_archivo.Updatesugerencia_archivo); //funcionando
-router.get('/verDetalleSugerencia_archivo/:id', sugerencia_archivo.Viewsugerencia_archivo); //funcionando
-router.delete('/eliminarSugerenci_archivoa/:id', sugerencia_archivo.Eliminarsugerencia_archivo); //funcionando
+router.put('/editarSugerencia_archivo/:id', sugerencia_archivo.Updatesugerencia_archivo);
+router.get('/verDetalleSugerencia_archivo/:id', sugerencia_archivo.Viewsugerencia_archivo); 
+router.delete('/eliminarSugerenci_archivo/:id', sugerencia_archivo.Eliminarsugerencia_archivo); 
 //rutas pregunta_archivo
 router.get('/listarPregunta_archivo',pregunta_archivo.Listarpregunta_archivo); //funcionando
 router.post('/nuevaPregunta_archivo',pregunta_archivo.Createpregunta_archivo);//funcionando
-router.put('/editarPregunta_archivo/:id', pregunta_archivo.Updatepregunta_archivo); //funcionando
-router.get('/verDetallePregunts_archivo/:id', pregunta_archivo.Viewpregunta_archivo); //funcionando
-router.delete('/eliminarPregunta_archivoa/:id', pregunta_archivo.Eliminarpregunta_archivo); //funcionando
+router.put('/editarPregunta_archivo/:id', pregunta_archivo.Updatepregunta_archivo); 
+router.get('/verDetallePregunts_archivo/:id', pregunta_archivo.Viewpregunta_archivo);
+router.delete('/eliminarPregunta_archivo/:id', pregunta_archivo.Eliminarpregunta_archivo); 
+//rutas respuesta_archivo
+router.get('/listarRespuesta_archivo',resspuesta_archivo.Listarrespuesta_archivo); //funcionando
+router.post('/nuevaRespuesta_archivo',resspuesta_archivo.Createrespuesta_archivo);//funcionando
+router.put('/editarRespuesta_archivo/:id', resspuesta_archivo.Updaterespuesta_archivo); //funcionando
+router.get('/verDetalleRespuesta_archivo/:id', resspuesta_archivo.Viewrespuesta_archivo); //funcionando
+router.delete('/eliminarRespuesta_archivoa/:id', resspuesta_archivo.Eliminarrespuesta_archivo); //funcionando
 
 
 
