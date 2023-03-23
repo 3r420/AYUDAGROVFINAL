@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
-const respuesta = require('../models/').Respuesta;
+const respuesta = require('../models').Respuesta;
+const pre = require('../models').Pregunta;
 
 
 
@@ -8,7 +9,7 @@ module.exports = {
 
     ListarRespuesta(req, res) {
         return respuesta.findAll({
-            // include: {model:preguntaArchivo,},require:'true',
+          //  include: {model:pre},require:'true',
         })
             .then(respuesta => res.status(200).send(respuesta))
             .catch(error => res.status(400).send(error));

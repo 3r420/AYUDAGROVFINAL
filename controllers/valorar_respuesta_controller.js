@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const valorar_respuesta = require('../models').Valorar_Respuesta;
+const us = require('../models').Respuesta
 
 
 
@@ -9,7 +10,7 @@ module.exports = {
 
     ListarValorarR(req, res) {
         return valorar_respuesta.findAll({
-            // include: {model:preguntaArchivo,},require:'true',
+             //include: {model:us,},require:'true',
         })
             .then(valorar_respuesta => res.status(200).send(valorar_respuesta))
             .catch(error => res.status(400).send(error));
