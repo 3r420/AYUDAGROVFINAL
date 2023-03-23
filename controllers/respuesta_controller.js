@@ -14,6 +14,16 @@ module.exports = {
             .catch(error => res.status(400).send(error));
     },
 
+    ListarRespuestasPorPreguntaId(req, res) {
+        return respuesta.findAll({
+            where: {
+                // pregunta_id: req.params.id
+            }
+        })
+            .then(respuesta => res.status(200).send(respuesta))
+            .catch(error => res.status(400).send(error));
+    },
+
 
     CreateRespuesta(req, res) {
         return respuesta.create({

@@ -50,6 +50,7 @@ router.post('/nuevaRespuesta', respuesta.CreateRespuesta); //funcionando
 router.put('/editarRespuesta/:id', respuesta.UpdateRespuesta); //funcionando
 router.get('/verDetalleRespuesta/:id', respuesta.ViewRespuesta); //funcionando
 router.delete('/eliminarRespuesta/:id', respuesta.EliminarRespuesta); //funcionando
+router.get('/ListarRespuestasPorPreguntaId/:id', respuesta.ListarRespuestasPorPreguntaId); //
 //rutas rol
 router.get('/listarRol',rol.ListarRol); //funcionando
 router.post('/nuevoRol',rol.CreateRol);//funcionando
