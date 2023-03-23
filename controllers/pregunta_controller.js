@@ -1,11 +1,12 @@
 const { QueryError } = require('sequelize');
 const Sequelize = require('sequelize');
 const pregunta = require('../models').Pregunta;
+const pr = require('../models').Subcategoria;
 
 module.exports = {
     ListarPregunta(req, res) {
         return pregunta.findAll({
-            // include: {model:preguntaArchivo,},require:'true',
+           //  include: {model:pr,},require:'true',
         })
             .then(pregunta => res.status(200).send(pregunta))
             .catch(error => res.status(400).send(error));
