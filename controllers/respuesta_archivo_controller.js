@@ -9,7 +9,7 @@ module.exports = {
 
     Listarrespuesta_archivo(req, res) {
         return respuesta_archivo.findAll({
-            include: {model:s,},require:'true',
+         //   include: {model:s,},require:'true',
         })
             .then(respuesta_archivo => res.status(200).send(respuesta_archivo))
             .catch(error => res.status(400).send(error));
