@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const valorar_respuesta = require('../models').Valorar_Respuesta;
-const us = require('../models').Respuesta
+const resp = require('../models').Respuesta;
+const usu= require('../models').Usuario
 
 
 
@@ -15,6 +16,23 @@ module.exports = {
             .then(valorar_respuesta => res.status(200).send(valorar_respuesta))
             .catch(error => res.status(400).send(error));
     },
+    ListarValorarRXusuario(req, res) {
+        return valorar_respuesta.findAll({
+             include: {model:usu,},require:'true',
+        })
+            .then(valorar_respuesta => res.status(200).send(valorar_respuesta))
+            .catch(error => res.status(400).send(error));
+    },
+    ListarValorarRXrespuesta(req, res) {
+        return valorar_respuesta.findAll({
+             include: {model:resp,},require:'true',
+        })
+            .then(valorar_respuesta => res.status(200).send(valorar_respuesta))
+            .catch(error => res.status(400).send(error));
+    },
+
+
+
 
 
     CreateValorarR(req, res) {

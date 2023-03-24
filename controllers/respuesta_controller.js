@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const respuesta = require('../models').Respuesta;
-const pre = require('../models').Pregunta;
+const pregunta = require('../models').Pregunta;
 
 
 
@@ -13,6 +13,15 @@ module.exports = {
         })
             .then(respuesta => res.status(200).send(respuesta))
             .catch(error => res.status(400).send(error));
+    },
+
+    listarRespuestaXpregunta(req,res){
+          return respuesta.findAll({
+            include:{model:pregunta},
+            require:'true',
+          })
+          .then(respuesta=> res.status(200).send(respuesta))
+          .catch(error=> res.status(400).send(error));
     },
 
     ListarRespuestasPorPreguntaId(req, res) {
