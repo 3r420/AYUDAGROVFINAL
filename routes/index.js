@@ -45,6 +45,7 @@ router.post('/nuevaPregunta', pregunta.CreatePregunta); //funcionando
 router.put('/editarPregunta/:id', pregunta.UpdatePregunta); //funcionando
 router.get('/verDetallePregunta/:id', pregunta.ViewPregunta); //funcionando
 router.delete('/eliminarPregunta/:id', pregunta.EliminarPregunta); //funcionando
+router.get('/ListarPreguntaNombreUsuario',pregunta.ListarPreguntaNombreUsuario);
 //rutas respuesta
 router.get('/listarRespuesta', respuesta.ListarRespuesta); //funcionanado
 router.post('/nuevaRespuesta', respuesta.CreateRespuesta); //funcionando

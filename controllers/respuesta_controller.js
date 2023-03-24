@@ -18,7 +18,7 @@ module.exports = {
     ListarRespuestasPorPreguntaId(req, res) {
         return respuesta.findAll({
             where: {
-                // pregunta_id: req.params.id
+                 pregunta_id: req.params.id
             }
         })
             .then(respuesta => res.status(200).send(respuesta))
