@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.INTEGER
     },
     
-    nombre: DataTypes.STRING
+    nombre: {type:DataTypes.STRING,
+      allowNull:false},
   }, {
     sequelize,
     modelName: 'Rol',

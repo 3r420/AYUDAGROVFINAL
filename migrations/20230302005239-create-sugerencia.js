@@ -15,11 +15,14 @@ module.exports = {
         references:{
           model:{tableName:'subcategoria'},
           key:'id_subcategoria'
-        }
+        },
+        allowNull: false,
       },
       descripcion: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
+      
       usuario_id: {
         type: Sequelize.INTEGER,
         references:{model:{tableName:'usuario'},key:'id_usuario'},

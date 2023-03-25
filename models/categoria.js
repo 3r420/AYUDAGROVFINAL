@@ -23,8 +23,10 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       type:DataTypes.INTEGER
     },
-    descripcion: DataTypes.STRING,
-    titulo: DataTypes.STRING
+    descripcion: {type:DataTypes.STRING,
+      allowNull:false},
+    titulo: {type:DataTypes.STRING,
+       allowNull:false}
   }, {
     sequelize,
     modelName: 'Categoria',

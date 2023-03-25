@@ -11,10 +11,13 @@ module.exports = {
       },
      
       nombre_archivo: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       url: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        
+       
       },
       createdAt: {
         allowNull: false,

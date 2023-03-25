@@ -21,8 +21,10 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type:DataTypes.INTEGER},
     respuesta_id: {type:DataTypes.INTEGER,
+        allowNull:false,
         references:{model:"Respuesta",key:'id_respuesta'}},
     archivo_id: {type:DataTypes.INTEGER,
+        allowNull:false,
         references:{model:'Archivo',key:'id_archivo'}},
   }, {
     sequelize,

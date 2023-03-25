@@ -18,10 +18,12 @@ module.exports = {
             },
 
             descripcion: {
-                type: Sequelize.STRING
+                type: Sequelize.STRING,
+                allowNull: false,
             },
             hora_fecha: {
-                type: Sequelize.STRING
+                type: Sequelize.STRING,
+                allowNull: false,
             },
            
 

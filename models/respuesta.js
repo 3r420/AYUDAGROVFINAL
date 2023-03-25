@@ -23,8 +23,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER 
     },
     pregunta_id: {type:DataTypes.INTEGER,
+      allowNull:false,
     references:{model:'Pregunta',key:'id_pregunta'}},
-    descripcion: DataTypes.STRING,
+    descripcion: {type:DataTypes.STRING,
+       allowNull:false},
     hora_fecha: DataTypes.STRING
   }, {
     sequelize,

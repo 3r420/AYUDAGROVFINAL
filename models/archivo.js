@@ -24,7 +24,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER
      
     },
-    nombre_archivo: DataTypes.STRING,
+    nombre_archivo: {type:DataTypes.STRING,
+      allowNull: false},
+         
     url: DataTypes.STRING
   }, {
     sequelize,

@@ -17,25 +17,36 @@ module.exports = {
         }
       },
       nombre: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+   
       },
       apellido: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+      
       },
       correo_electronico: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique:true,
+        allowNull: false,
       },
       contrasena: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       repetir_contrasena: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       telefono: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        unique:true,
       },
       direccion: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       estado: {
         type: Sequelize.STRING

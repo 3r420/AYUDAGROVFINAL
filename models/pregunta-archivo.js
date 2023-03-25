@@ -22,9 +22,12 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type:DataTypes.INTEGER},
     pregunta_id: {type:DataTypes.INTEGER,
+      allowNull:false,
       references:{model:'Pregunta',key:'id_pregunta'}},
+
     archivo_id: {
       type:DataTypes.INTEGER,
+      allowNull:false,
       references:{model:"Archivo",key:"id_archivo"},
   },
  }, {
