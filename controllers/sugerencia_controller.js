@@ -14,7 +14,13 @@ module.exports = {
             .then(sugerencia => res.status(200).send(sugerencia))
             .catch(error => res.status(400).send(error));
     },
-
+    ListarSugerenciaPorSubcategoria(req, res) {
+        return sugerencia.findAll({
+          include: {model:s,},require:'true',
+        })
+            .then(sugerencia => res.status(200).send(sugerencia))
+            .catch(error => res.status(400).send(error));
+    },
 
     CreateSugerencia(req, res) {
         return sugerencia.create({

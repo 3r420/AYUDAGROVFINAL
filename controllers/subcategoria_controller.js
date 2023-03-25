@@ -10,7 +10,17 @@ module.exports = {
     ListarSubcategoria(req, res) {
   
         return subcategoria.findAll({
-           //  include: {model:categoria,},require:'true',
+           
+        })
+
+
+        .then(subcategoria => res.status(200).send(subcategoria))
+            .catch(error => res.status(400).send(error.toString()))
+    },
+    ListarSubcategoriaxCategoria(req, res) {
+  
+        return subcategoria.findAll({
+           include: {model:categoria,},require:'true',
         })
 
 

@@ -1,7 +1,7 @@
 const { QueryError } = require('sequelize');
 const Sequelize = require('sequelize');
 const pregunta = require('../models').Pregunta;
-const pr = require('../models').Subcategoria;
+const sub = require('../models').Subcategoria;
 const usuario =require('../models').Usuario;
 
 module.exports = {
@@ -17,6 +17,19 @@ module.exports = {
         return pregunta.findAll({
             include:{
                 model:usuario,
+               
+            }
+        
+            
+          })
+            .then(pregunta => res.status( 200).send(pregunta))
+            .catch(error => res.status(400).send(error));
+    },
+  //lista pregunta x subcategoria  
+    ListarPreguntaSubcategoria(req, res) {
+        return pregunta.findAll({
+            include:{
+                model:sub,
                
             }
         

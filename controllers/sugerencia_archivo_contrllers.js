@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const sugerencia_archivo = require('../models').Sugerencia_archivo;
-const s = require('../models').Sugerencia;
+const suge = require('../models').Sugerencia;
+const archi = require('../models').Archivo;
 
 
 
@@ -9,11 +10,27 @@ module.exports = {
 
     Listarsugerencia_archivo(req, res) {
         return sugerencia_archivo.findAll({
-           // include: {model:s,},require:'true',
         })
             .then(sugerencia_archivo => res.status(200).send(sugerencia_archivo))
             .catch(error => res.status(400).send(error));
     },
+
+    Listarsugerencia_archivoXsugerencia(req, res) {
+        return sugerencia_archivo.findAll({
+            include: {model:suge,},require:'true',
+        })
+            .then(sugerencia_archivo => res.status(200).send(sugerencia_archivo))
+            .catch(error => res.status(400).send(error));
+    },
+
+    Listarsugerencia_archivoXarchivo(req, res) {
+        return sugerencia_archivo.findAll({
+            include: {model:archi,},require:'true',
+        })
+            .then(sugerencia_archivo => res.status(200).send(sugerencia_archivo))
+            .catch(error => res.status(400).send(error));
+    },
+
 
 
     Createsugerencia_archivo(req, res) {

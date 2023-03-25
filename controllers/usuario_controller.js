@@ -1,12 +1,21 @@
 const { QueryError } = require('sequelize');
 const Sequelize = require('sequelize');
 const usuario = require('../models').Usuario;
-//const rol = require('../models').Rol;
+const rol = require('../models').Rol;
+
 
 module.exports = {
     ListarUsuario(req, res) {
         return usuario.findAll({
-          //   include: {model:rol,},require:'true',
+          
+        })
+            .then(usuario => res.status(200).send(usuario))
+            .catch(error => res.status(400).send(error));
+    },
+    
+    ListarUsuarioPorRol(req, res) {
+        return usuario.findAll({
+            include: {model:rol,},require:'true',
         })
             .then(usuario => res.status(200).send(usuario))
             .catch(error => res.status(400).send(error));

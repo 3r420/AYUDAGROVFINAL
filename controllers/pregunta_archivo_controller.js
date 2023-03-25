@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const pregunta_archivo = require('../models').Pregunta_archivo;
-const s = require('../models').Archivo;
+const ar = require('../models').Archivo;
+const pregunta = require('../models').Pregunta;
 
 
 
@@ -9,7 +10,22 @@ module.exports = {
 
     Listarpregunta_archivo(req, res) {
         return pregunta_archivo.findAll({
-            //include: {model:s,},require:'true',
+        })
+            .then(pregunta_archivo => res.status(200).send(pregunta_archivo))
+            .catch(error => res.status(400).send(error));
+    },
+    ListarpreguntaArchivoPorPregunta(req, res) {
+        return pregunta_archivo.findAll({
+            include:{model:pregunta,},
+            require:'true'
+        })
+            .then(pregunta_archivo => res.status(200).send(pregunta_archivo))
+            .catch(error => res.status(400).send(error));
+    },
+    ListarpreguntaArchivoPorArchivo(req, res) {
+        return pregunta_archivo.findAll({
+            include:{model:ar,},
+            require:'true'
         })
             .then(pregunta_archivo => res.status(200).send(pregunta_archivo))
             .catch(error => res.status(400).send(error));

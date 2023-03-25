@@ -100,16 +100,29 @@ router.delete('/eliminarRespuesta_archivoa/:id', resspuesta_archivo.Eliminarresp
 //rutas relacionadas entre tablas
 //rutas relacionadas   respuesta
 router.get('/listarRespuestaPorPregunta',respuesta.listarRespuestaXpregunta);//👍
-//rutas relacionadas   pregunta
 router.get('/ListarRespuestasPorPreguntaId/:id', respuesta.ListarRespuestasPorPreguntaId); //👍
+
+//rutas relacionadas   pregunta
+router.get('/listarPreguntaXusuario',pregunta.ListarPreguntaNombreUsuario);//👍👍
+router.get('/listarPreguntaPorSubcategoria',pregunta.ListarPreguntaSubcategoria)//👍
 //rutas relacionadas   valorarR
 router.get('/ListarvaloracionXusuario', valorar_respuesta.ListarValorarRXusuario); //👍
 router.get('/ListarvaloracionXrespuesta', valorar_respuesta.ListarValorarRXrespuesta); //👍
 //rutas relacionadas   respuestaArchivo
 router.get('/ListarRespuestaArchivoXrespuesta', resspuesta_archivo.Listarrespuesta_archivoXrespuesta); //👍
 router.get('/ListarRespuestaArchivoXarchivo', resspuesta_archivo.Listarrespuesta_archivoXarchivo); //👍
-
-
+//rutas relacionadas   subcategoria
+router.get('/ListarSubcategoriaPorCategoria', subcategoria.ListarSubcategoriaxCategoria); //👍
+//rutas relacionadas de sugerencia
+router.get('/listarSugerenciaXSubcategoria',sugerencia.ListarSugerenciaPorSubcategoria);//👍
+//rutas relacionadas   preguntaArchivo
+router.get('/ListarPreguntaArchivoXpregunta', pregunta_archivo.ListarpreguntaArchivoPorPregunta); //👍
+router.get('/ListarRespuestaArchivoXarchivo', pregunta_archivo.ListarpreguntaArchivoPorArchivo); //👍
+//rutas relacionadas de usuario
+router.get('/listarUserPorRol',usuario.ListarUsuarioPorRol)
+//rutas relacionadas de sugerencia_archivo
+router.get('/listaSugerenciaArchivoPorSugerencia',sugerencia_archivo.Listarsugerencia_archivoXsugerencia)
+router.get('/listaSugerenciaArchivoPorArchivo',sugerencia_archivo.Listarsugerencia_archivoXarchivo)
 
 
 /* GET home page. 
