@@ -10,7 +10,6 @@ module.exports = {
       apellido: 'Martinez Ortega',
       correo_electronico: 'yennifernataly2003@gmail.com',
       contrasena: 'Yennita123',
-      repetir_contrasena: 'yennita123',
       telefono: 3178081939,
       direccion: 'calle 70AN No 5-14',
       estado: 'activo',

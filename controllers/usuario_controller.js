@@ -28,7 +28,6 @@ module.exports = {
             apellido: req.body.apellido,
             correo_electronico: req.body.correo_electronico,
             contrasena: req.body.contrasena,
-            repetir_contrasena: req.body.repetir_contrasena,
             telefono: req.body.telefono,
             direccion: req.body.direccion,
             estado: req.body.estado
@@ -45,7 +44,6 @@ module.exports = {
             apellido: req.body.apellido,
             correo_electronico: req.body.correo_electronico,
             contrasena: req.body.contrasena,
-            repetir_contrasena: req.body.repetir_contrasena,
             telefono: req.body.telefono,
             direccion: req.body.direccion,
             estado: req.body.estado

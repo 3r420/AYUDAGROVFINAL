@@ -35,10 +35,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      repetir_contrasena: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
+     
       telefono: {
         type: Sequelize.INTEGER,
         allowNull: false,

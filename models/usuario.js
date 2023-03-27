@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Pregunta,{foreignKey:'usuario_id'}),
       this.belongsTo(models.Rol,{foreignKey:'rol_id'}),
       this.hasMany(models.Valorar_Respuesta,{foreignKey:'usuario_id'}),
-      this.hasMany(models.Sugerencia,{foreignKey:'usuario_id'})
+      this.hasMany(models.Sugerencia,{foreignKey:'usuario_id'}),
+      this.hasMany(models.Pregunta,{foreignKey:'usuario_id'})
     }
   }
   Usuario.init({
@@ -37,8 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     
     contrasena: {type:DataTypes.STRING,
       allowNull:false},
-    repetir_contrasena:{type: DataTypes.STRING,
-      allowNull:false},
+    
     telefono: {type:DataTypes.INTEGER,
      allowNull:false},
     direccion: {type:DataTypes.STRING,

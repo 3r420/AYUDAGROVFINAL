@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const respuesta = require('../models').Respuesta;
 const pregunta = require('../models').Pregunta;
+const usuario = require('../models').Usuario;
 
 
 
@@ -23,6 +24,14 @@ module.exports = {
           .then(respuesta=> res.status(200).send(respuesta))
           .catch(error=> res.status(400).send(error));
     },
+    listarRespuestaXusuario(req,res){
+        return respuesta.findAll({
+          include:{model:usuario},
+          require:'true',
+        })
+        .then(respuesta=> res.status(200).send(respuesta))
+        .catch(error=> res.status(400).send(error));
+  },
 
     ListarRespuestasPorPreguntaId(req, res) {
         return respuesta.findAll({
@@ -37,9 +46,11 @@ module.exports = {
 
     CreateRespuesta(req, res) {
         return respuesta.create({
+            pregunta_id: req.body.pregunta_id,
+            usuario_id:req.body.usuario_id,
             descripcion: req.body.descripcion,
             hora_fecha: req.body.hora_fecha,
-            pregunta_id: req.body.pregunta_id
+         
 
 
         })
@@ -49,10 +60,10 @@ module.exports = {
     },
     UpdateRespuesta(req, res) {
         return respuesta.update({
+            pregunta_id: req.body.pregunta_id,
+            usuario_id:req.body.usuario_id,
             descripcion: req.body.descripcion,
             hora_fecha: req.body.hora_fecha,
-            hora_de_publicacion: req.body.hora_de_publicacion,
-            fecha_de_publicacion: req.body.fecha_de_publicacion,
         }, {
             where: {
                 id_respuesta: req.params.id,

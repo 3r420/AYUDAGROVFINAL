@@ -101,6 +101,8 @@ router.delete('/eliminarRespuesta_archivoa/:id', resspuesta_archivo.Eliminarresp
 //rutas relacionadas   respuesta
 router.get('/listarRespuestaPorPregunta',respuesta.listarRespuestaXpregunta);//👍
 router.get('/ListarRespuestasPorPreguntaId/:id', respuesta.ListarRespuestasPorPreguntaId); //👍
+router.get('/ListarRespuestasPorUsuario', respuesta.listarRespuestaXusuario); //👍
+
 
 //rutas relacionadas   pregunta
 router.get('/listarPreguntaXusuario',pregunta.ListarPreguntaNombreUsuario);//👍👍
