@@ -16,7 +16,14 @@ module.exports = {
                 key:'id_pregunta'
                 }
             },
-
+            usuario_id:{
+                type:Sequelize.INTEGER,
+                allowNull:false,
+                references:{
+                    model:{tableName:'usuario'},
+                    key:'id_usuario'
+                }
+            },
             descripcion: {
                 type: Sequelize.STRING,
                 allowNull: false,

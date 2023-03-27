@@ -11,7 +11,11 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 // view engine setup
+app.get('/',(req,res)=>{
+  res.send('creada por el: Equipo de Ayudagro');
+})
 app.set('views', path.join(__dirname, 'views'));
+//console.log(__dirname),
 app.set('view engine', 'hbs');
 app.use(cors());
 
