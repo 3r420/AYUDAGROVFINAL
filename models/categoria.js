@@ -6,6 +6,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Categoria extends Model {
     /**
+     * nnn
      * Helper method for defining associations.z
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
