@@ -18,7 +18,7 @@ module.exports = {
             },
             usuario_id:{
                 type:Sequelize.INTEGER,
-                allowNull:false,
+                // allowNull:false,
                 references:{
                     model:{tableName:'usuario'},
                     key:'id_usuario'
@@ -26,11 +26,11 @@ module.exports = {
             },
             descripcion: {
                 type: Sequelize.STRING,
-                allowNull: false,
+                // allowNull: false,
             },
             hora_fecha: {
                 type: Sequelize.STRING,
-                allowNull: false,
+                // allowNull: false,
             },
            
 

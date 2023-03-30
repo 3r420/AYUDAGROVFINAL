@@ -16,11 +16,11 @@ module.exports = {
           model:{tableName:'subcategoria'},
           key:'id_subcategoria'
         },
-        allowNull: false,
+        // allowNull: false,
       },
       descripcion: {
         type: Sequelize.STRING,
-        allowNull: false,
+        // allowNull: false,
       },
       
       usuario_id: {

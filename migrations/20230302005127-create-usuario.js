@@ -18,32 +18,32 @@ module.exports = {
       },
       nombre: {
         type: Sequelize.STRING,
-        allowNull: false,
+        // allowNull: false,
    
       },
       apellido: {
         type: Sequelize.STRING,
-        allowNull: false,
+        // allowNull: false,
       
       },
       correo_electronico: {
         type: Sequelize.STRING,
-        unique:true,
-        allowNull: false,
+        // unique:true,
+        // allowNull: false,
       },
       contrasena: {
         type: Sequelize.STRING,
-        allowNull: false,
+        // allowNull: false,
       },
      
       telefono: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        unique:true,
+        // allowNull: false,
+        // unique:true,
       },
       direccion: {
         type: Sequelize.STRING,
-        allowNull: false,
+        // allowNull: false,
       },
       estado: {
         type: Sequelize.STRING

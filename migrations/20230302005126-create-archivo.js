@@ -12,7 +12,7 @@ module.exports = {
      
       nombre_archivo: {
         type: Sequelize.STRING,
-        allowNull: false,
+        //allowNull: false,
       },
       url: {
         type: Sequelize.STRING,

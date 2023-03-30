@@ -20,11 +20,11 @@ module.exports = {
       },
       descripcion: {
         type: Sequelize.STRING,
-        allowNull: false,
+        //allowNull: false,
       },
       titulo: {
         type: Sequelize.STRING,
-        allowNull: false,
+        // allowNull: false,
       },
       createdAt: {
         allowNull: false,
