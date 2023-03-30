@@ -25,9 +25,18 @@ module.exports = (sequelize, DataTypes) => {
      
     },
     nombre_archivo: {type:DataTypes.STRING,
-      allowNull: false},
+      //allowNull: false,
+      
+     
+    },
          
-    url: DataTypes.STRING
+    url: {type:DataTypes.STRING,
+      // validate:{
+      //   isUrl:{
+      //     msg:'tiene que ser una url valida'
+      //   }
+      // }
+    },
   }, {
     sequelize,
     modelName: 'Archivo',

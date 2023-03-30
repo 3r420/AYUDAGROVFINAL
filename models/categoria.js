@@ -24,9 +24,29 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.INTEGER
     },
     descripcion: {type:DataTypes.STRING,
-      allowNull:false},
+      // allowNull:false,
+      // validate:{
+      //   notNull:{
+      //     msg:'porfavor ingrese una descripcion'
+      //   },
+      //   // len:{
+      //   //   args:[10 , 500],
+      //   //   msg:"la descripcion deve tener entre 10 a 500 caracteres"
+      //   // }
+      // },
+    },
     titulo: {type:DataTypes.STRING,
-       allowNull:false}
+      //  allowNull:false,
+      // validate:{
+      //   isAlpha:{
+      //     msg:'El nombre deve contener caracteres alfabeticos'
+      //   },
+      //   len:{
+      //     args:[4, 30],
+      //     msg:'El nombre de la categoria deve contener entre 4 y 30 caracteres'
+      //   }
+      // },
+    }
   }, {
     sequelize,
     modelName: 'Categoria',

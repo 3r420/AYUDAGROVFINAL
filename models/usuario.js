@@ -26,18 +26,49 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER
     },
     rol_id:{type:DataTypes.INTEGER,
-      allowNull:false,
-      references:{model:'Rol',key:'id_rol'}},
-    nombre: {type:DataTypes.STRING,
-      allowNull:false},
+    //   allowNull:false,
+    //   references:{model:'Rol',key:'id_rol'}},
+    // nombre: {type:DataTypes.STRING,
+    //   allowNull:false,
+    //   validate:{
+    //   notNull:{
+    //     msg:'Porfavor ingrese su nombre '
+    //   },
+    //   isAlpha:{
+    //     msg:'el nombre solo puede contener letras'
+    //   },
+    //   len:{
+    //     args:[3, 50],
+    //     msg:'El nombre deve contener como minimo tres (3) caracteres'
+    //   },
+    //   },
+  },
     apellido:{type: DataTypes.STRING,
-      allowNull:false},
+      // allowNull:false,
+      // validate:{
+      //   notNull:{
+      //     len:[3,50],
+      //     msg:'Porfavor ingrese su apellido con minimo 3 caracters'
+      //   }
+      //   },
+    },
     correo_electronico: {type:DataTypes.STRING,
-      allowNull:false,
-      unique:true},
+      // allowNull:false,
+      // unique:true,
+      // validate:{
+      //   notNull:{
+      //     msg:'Porfavor ingrese su correo'
+      //   },
+      //   isEmail: true,
+      //   },
+    },
     
     contrasena: {type:DataTypes.STRING,
-      allowNull:false},
+      // allowNull:false,
+      // validate: {
+      //   is: /^[0-9a-f]{64}$/i
+      // }
+    },
     
     telefono: {type:DataTypes.INTEGER,
      allowNull:false},

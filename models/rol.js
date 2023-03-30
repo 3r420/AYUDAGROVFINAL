@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     
     nombre: {type:DataTypes.STRING,
-      allowNull:false},
+      //allowNull:false
+    },
   }, {
     sequelize,
     modelName: 'Rol',

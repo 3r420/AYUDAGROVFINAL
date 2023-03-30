@@ -24,13 +24,14 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.INTEGER
     },
     subcategoria_id: {type:DataTypes.INTEGER,
-      allowNull:false,
+      //allowNull:false,
     references:{model:'Subcategoria',key:'id_subcategoria'}
   },
     descripcion: {type:DataTypes.STRING,
-    allowNull:false},
+   // allowNull:false
+  },
     usuario_id: {type:DataTypes.INTEGER,
-      allowNull:false,
+      //allowNull:false,
       references:{model:'Usuario',key:'id_usuario'}},
   }, {
     sequelize,

@@ -23,11 +23,11 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.INTEGER},
     archivo_id: {
       type:DataTypes.INTEGER,
-      allowNull:false,
+     // allowNull:false,
       references:{model:'Archivo', key:'id_archivo'}},
     sugerencia_id: {
       type:DataTypes.INTEGER,
-      allowNull:false,
+      //allowNull:false,
       references:{model:'Sugerencia', key:'id_sugerencia'}},
   }, {
     sequelize,
