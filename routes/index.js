@@ -16,9 +16,11 @@ const subcategoria = require('../controllers/subcategoria_controller');
 const valorar_respuesta = require('../controllers/valorar_respuesta_controller');
 const pregunta_archivo = require('../controllers/pregunta_archivo_controller');
 const resspuesta_archivo = require('../controllers/respuesta_archivo_controller');
+const AuthController = require('../controllers/AuthController');
 
-
-
+//user
+router.post('/nuevoUser',AuthController.registro);
+router.post('/login',AuthController.login);
 
 
 //rutas de categorias
