@@ -43,29 +43,32 @@ const { BaseError } = require('sequelize');
     },
 
     //registro
-    registro(req,res){
+     registro(req,res){
         //encriptamos contraseña
-       
-        let contrasena =bcrypt.hashSync(req.body.contrasena,authConfig.rounds);
+        let {rol,nombre,apellido,correo_electronico,contrasena,telefono,direccion,estado}=req.body
+    
+        let contrasenas =bcrypt.hashSync(req.body.contrasena,authConfig.rounds);
+        
        //crear user
-         user.create({
-            rol_id:req.body.rol_id,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            correo_electronico: req.body.correo_electronico,
-            contrasena:contrasena,
-            telefono: req.body.telefono,
-            direccion: req.body.direccion,
-            estado: req.body.estado
+       return   user.create({
+            rol_id:rol,
+            nombre: nombre,
+            apellido:apellido,
+            correo_electronico:correo_electronico,
+            contrasena:contrasenas,
+            telefono:telefono,
+            direccion:direccion,
+            estado:estado
         }).then(user=>{
             //creamos token
-            let token =jwt.sign({user:user},authConfig.secret,{
-                expiresIn:authConfig.expires
-            });
+            // let token =jwt.sign({user:user},authConfig.secret,{
+            //     expiresIn:authConfig.expires
+            // });
              res.json({
-                user:user,
-                token:token
-             });
+                // user:user,
+                // token:token
+                user
+        });
         }).catch(err=>{
             res.status(400).json(console.error(err));
         })

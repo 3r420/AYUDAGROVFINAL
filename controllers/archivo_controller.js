@@ -1,5 +1,4 @@
-const { Model } = require('sequelize');
-const { QueryError } = require('sequelize');
+
 const Sequelize = require('sequelize');
 const preguntaArchivo = require('../models').Pregunta_archivo;
 const archivo = require('../models').Archivo;
