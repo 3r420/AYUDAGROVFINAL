@@ -4,7 +4,7 @@
  const bcrypt =require('bcrypt');
  const jwt = require ('jsonwebtoken');
  const authConfig=require('../config/auth');
-const { BaseError } = require('sequelize');
+ const { BaseError } = require('sequelize');
 
 
  module.exports={
@@ -19,7 +19,7 @@ const { BaseError } = require('sequelize');
             }
         }).then(user=>{
             if(!user){
-                res.status(404).json({msg:"No se encontro ningun usuario registrado con este correo"});
+                res.status(404).json({msg:"No se encontro ningun usuario registrado con este correo", status:"error"});
 
             } else{
                 if(bcrypt.compareSync(contrasena, user.contrasena)){
@@ -32,7 +32,7 @@ const { BaseError } = require('sequelize');
                         token:token
                      });
                 }else {
-                    res.status(401).json({msg:"Contraseña incorrecta"})
+                    res.status(401).json({msg:"Contraseña incorrecta", status:"error"})
                 }
             }
         }).catch(err =>{
