@@ -19,7 +19,7 @@
             }
         }).then(user=>{
             if(!user){
-                res.status(404).json({msg:"No se encontro ningun usuario registrado con este correo", status:"error"});
+                res.status(404).json({msg:"No se encontro ningun usuario registrado con este correo", });
 
             } else{
                 if(bcrypt.compareSync(contrasena, user.contrasena)){
@@ -32,7 +32,7 @@
                         token:token
                      });
                 }else {
-                    res.status(401).json({msg:"Contraseña incorrecta", status:"error"})
+                    res.status(401).json({msg:"Contraseña incorrecta", })
                 }
             }
         }).catch(err =>{
