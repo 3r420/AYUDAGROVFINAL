@@ -21,6 +21,7 @@ const AuthController = require('../controllers/AuthController');
 //user
 router.post('/nuevoUser',AuthController.registro);
 router.post('/login',AuthController.login);
+router.post('/recuperar',AuthController.rescuperar);
 
 
 //rutas de categorias

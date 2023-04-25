@@ -41,7 +41,12 @@ module.exports = {
 
     CreatePregunta(req, res) {
         return pregunta.create({
+            subcategoria_id:req.body.subcategoria_id,
+            usuario_id:req.body.usuario_id,
             descripcion: req.body.descripcion,
+            include:{
+                model:usuario
+            }
            
         })
 

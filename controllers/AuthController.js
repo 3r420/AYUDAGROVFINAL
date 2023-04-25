@@ -19,7 +19,7 @@
             }
         }).then(user=>{
             if(!user){
-                res.status(404).json({msg:"No se encontro ningun usuario registrado con este correo", });
+                res.status(200).json({msg:"No se encontro ningun usuario registrado con este correo", status:"error"});
 
             } else{
                 if(bcrypt.compareSync(contrasena, user.contrasena)){
@@ -32,11 +32,11 @@
                         token:token
                      });
                 }else {
-                    res.status(401).json({msg:"Contraseña incorrecta", })
+                    res.status(200).json({msg:"Contraseña incorrecta",status:"error" })
                 }
             }
         }).catch(err =>{
-            res.status(400).json(err);
+            res.status(200).json(err);
         })
 
 
@@ -72,5 +72,27 @@
         }).catch(err=>{
             res.status(400).json(console.error(err));
         })
+    },
+
+    rescuperar(req,res){
+        let {correo_electronico} = req.body;
+        //buscar usuario
+        user.findOne({
+            where:{
+                correo_electronico:correo_electronico
+            }
+        }).then(user=>{
+            if(!user){
+                res.status(404).json({msg:"No se encontro ningun usuario registrado con este correo", });
+
+            } else{res.json({
+                user:correo_electronico
+            })}
+
+        }).catch(err =>{
+            res.status(400).json(err);
+        })
+
+
     },
  }
