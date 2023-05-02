@@ -25,6 +25,15 @@ module.exports = {
             .then(pregunta => res.status( 200).send(pregunta))
             .catch(error => res.status(400).send(error));
     },
+    ListarPreguntaNombreUsuariosId(req, res) {
+        return pregunta.findOne({
+            include:{model:usuario},
+            where:{id_pregunta:req.params.id}
+            
+          })
+            .then(pregunta => res.status( 200).send(pregunta))
+            .catch(error => res.status(400).send(error));
+    },
   //lista pregunta x subcategoria  
     ListarPreguntaSubcategoria(req, res) {
         return pregunta.findAll({
@@ -40,16 +49,16 @@ module.exports = {
     },
 
     CreatePregunta(req, res) {
+       // let {usuario_id}=parseInt(req.body)
+       // console.log(usuario_id)
         return pregunta.create({
             subcategoria_id:req.body.subcategoria_id,
             usuario_id:req.body.usuario_id,
             descripcion: req.body.descripcion,
-            include:{
-                model:usuario
-            }
-           
-        })
 
+           
+
+        })
         .then(pregunta => res.status(200).send(pregunta))
             .catch(error => res.status(400).send(error))
     },

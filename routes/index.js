@@ -102,14 +102,17 @@ router.delete('/eliminarRespuesta_archivoa/:id', resspuesta_archivo.Eliminarresp
 
 //rutas relacionadas entre tablas
 //rutas relacionadas   respuesta
+router.get('/resxUser',respuesta.PreguntaxUsuario);
 router.get('/listarRespuestaPorPregunta',respuesta.listarRespuestaXpregunta);//👍
 router.get('/ListarRespuestasPorPreguntaId/:id', respuesta.ListarRespuestasPorPreguntaId); //👍
-router.get('/ListarRespuestasPorUsuario', respuesta.listarRespuestaXusuario); //👍
+router.get('/ListarRespuestasPorUsuario/:id', respuesta.listarRespuestaXusuario); //👍
 
 
 //rutas relacionadas   pregunta
+router.get('/listarPreguntaNombreUsuario',pregunta.ListarPreguntaNombreUsuario)
 router.get('/listarPreguntaXusuario',pregunta.ListarPreguntaNombreUsuario);//👍👍
 router.get('/listarPreguntaPorSubcategoria',pregunta.ListarPreguntaSubcategoria)//👍
+router.get('/ListarPreguntaxId/:id',pregunta.ListarPreguntaNombreUsuariosId)
 //rutas relacionadas   valorarR
 router.get('/ListarvaloracionXusuario', valorar_respuesta.ListarValorarRXusuario); //👍
 router.get('/ListarvaloracionXrespuesta', valorar_respuesta.ListarValorarRXrespuesta); //👍
