@@ -12,11 +12,11 @@ module.exports = {
       .then((respuesta) => res.status(200).send(respuesta))
       .catch((error) => res.status(400).send(error));
   },
-  PreguntaxUsuario(req,res){
+  RespuestaxUsuario(req,res){
     return respuesta
-    .findAll({
+    .findOne({
       include:{model:usuario},
-      require:"true",
+      where:{id_respuesta:req.params.id},
     })
     .then((respuesta)=>res.status(200).send(respuesta))
     .catch((error)=>res.status(400).send(error));
@@ -24,7 +24,7 @@ module.exports = {
 
   listarRespuestaXpregunta(req, res) {
     return respuesta
-      .findAll({
+      .findOne({
         include: { model: pregunta },
         require: "true",
       })
@@ -33,10 +33,14 @@ module.exports = {
   },
   listarRespuestaXusuario(req, res) {
     return respuesta
-      .findAll({
-        include: { model: usuario },
+      .findOne({
+        include: { model: usuario},
         where:{id_respuesta:req.params.id},
         require: "true",
+        // include: { model: usuario },
+        // where:{id_respuesta:req.params.id},
+        // require: "true",
+
       })
       .then((respuesta) => res.status(200).send(respuesta))
       .catch((error) => res.status(400).send(error));

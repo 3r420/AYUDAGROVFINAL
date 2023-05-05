@@ -102,7 +102,7 @@ router.delete('/eliminarRespuesta_archivoa/:id', resspuesta_archivo.Eliminarresp
 
 //rutas relacionadas entre tablas
 //rutas relacionadas   respuesta
-router.get('/resxUser',respuesta.PreguntaxUsuario);
+router.get('/resxUser/:id',respuesta.RespuestaxUsuario);
 router.get('/listarRespuestaPorPregunta',respuesta.listarRespuestaXpregunta);//👍
 router.get('/ListarRespuestasPorPreguntaId/:id', respuesta.ListarRespuestasPorPreguntaId); //👍
 router.get('/ListarRespuestasPorUsuario/:id', respuesta.listarRespuestaXusuario); //👍
