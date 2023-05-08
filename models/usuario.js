@@ -13,9 +13,9 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       this.hasMany(models.Pregunta,{foreignKey:'usuario_id'}),
       this.belongsTo(models.Rol,{foreignKey:'rol_id'}),
-      this.hasMany(models.Valorar_Respuesta,{foreignKey:'usuario_id'}),
+      this.hasMany(models.Valorar_Respuesta,{foreignKey:'usuario_id',onDelete:'cascade'}),
       this.hasMany(models.Sugerencia,{foreignKey:'usuario_id'}),
-      this.hasMany(models.Pregunta,{foreignKey:'usuario_id'})
+      this.hasMany(models.Pregunta,{foreignKey:'usuario_id',onDelete:"cascade"})
     }
   }
   Usuario.init({
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
     },
     rol_id:{type:DataTypes.INTEGER,
     //   allowNull:false,

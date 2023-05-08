@@ -14,6 +14,7 @@ module.exports = {
         references:{
           model:{tableName:'rol'},
           key:'id_rol'
+          
         }
       },
       nombre: {

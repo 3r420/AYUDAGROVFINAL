@@ -21,6 +21,9 @@ const AuthController = require('../controllers/AuthController');
 //user
 router.post('/nuevoUser',AuthController.registro);
 router.post('/login',AuthController.login);
+router.post('/login2',AuthController.loginrol2);
+router.post('/login3',AuthController.loginrol3);
+
 router.post('/recuperar',AuthController.rescuperar);
 
 

@@ -42,8 +42,8 @@ module.exports = {
             rol_id:req.body.rol_id,
             nombre: req.body.nombre,
             apellido: req.body.apellido,
-            correo_electronico: req.body.correo_electronico,
-            contrasena: req.body.contrasena,
+           // correo_electronico: req.body.correo_electronico,
+          //  contrasena: req.body.contrasena,
             telefono: req.body.telefono,
             direccion: req.body.direccion,
             estado: req.body.estado

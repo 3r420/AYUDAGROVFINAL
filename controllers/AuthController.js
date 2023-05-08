@@ -11,7 +11,8 @@
 
     //login
     login(req,res){
-        let {correo_electronico, contrasena} = req.body;
+        let {correo_electronico, contrasena,rol_id} = req.body;
+        console.log("aki esta el id "+rol_id)
         //buscar usuario
         user.findOne({
             where:{
@@ -22,7 +23,71 @@
                 res.status(200).json({msg:"No se encontro ningun usuario registrado con este correo", status:"error"});
 
             } else{
-                if(bcrypt.compareSync(contrasena, user.contrasena)){
+                if(bcrypt.compareSync(contrasena, user.contrasena)&& rol_id==1){
+                    //reamos token
+                    let token =jwt.sign({user:user},authConfig.secret,{
+                        expiresIn:authConfig.expires
+                    });
+                     res.json({
+                        user:user,
+                        token:token
+                     });
+                }else {
+                    res.status(200).json({msg:"Contraseña incorrecta",status:"error" })
+                }
+            }
+        }).catch(err =>{
+            res.status(200).json(err);
+        })
+
+
+    },
+    loginrol2(req,res){
+        let {correo_electronico, contrasena,rol_id} = req.body;
+        console.log("aki esta el id del admin "+rol_id)
+        //buscar usuario
+        user.findOne({
+            where:{
+                correo_electronico:correo_electronico
+            }
+        }).then(user=>{
+            if(!user){
+                res.status(200).json({msg:"No se encontro ningun usuario registrado con este correo", status:"error"});
+
+            } else{
+                if(bcrypt.compareSync(contrasena, user.contrasena)&& rol_id==2){
+                    //reamos token
+                    let token =jwt.sign({user:user},authConfig.secret,{
+                        expiresIn:authConfig.expires
+                    });
+                     res.json({
+                        user:user,
+                        token:token
+                     });
+                }else {
+                    res.status(200).json({msg:"Contraseña incorrecta",status:"error" })
+                }
+            }
+        }).catch(err =>{
+            res.status(200).json(err);
+        })
+
+
+    },
+    loginrol3(req,res){
+        let {correo_electronico, contrasena,rol_id} = req.body;
+        console.log("aki esta el id "+rol_id)
+        //buscar usuario
+        user.findOne({
+            where:{
+                correo_electronico:correo_electronico
+            }
+        }).then(user=>{
+            if(!user){
+                res.status(200).json({msg:"No se encontro ningun usuario registrado con este correo", status:"error"});
+
+            } else{
+                if(bcrypt.compareSync(contrasena, user.contrasena)&& rol_id==3){
                     //reamos token
                     let token =jwt.sign({user:user},authConfig.secret,{
                         expiresIn:authConfig.expires
