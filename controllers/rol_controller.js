@@ -59,6 +59,22 @@ module.exports = {
 
         .then(rol => res.status(200).send(rol))
             .catch(error => res.status(400).send(error))
-    }
-
+    },
+    async eliminarRol(req, res) {
+        
+          await rol.destroy({
+            where: {
+              id_rol: req.params.id
+            }
+          }).then(()=>res.status(200).send('eliminado'))
+        //   if (numDeleted > 0) {
+        //     res.status(200).send('Eliminado');
+        //   } else {
+        //     res.status(404).send('El registro no existe');
+        //     console.log("si"+ numDeleted)
+        //   }
+         .catch (error => 
+          res.status(400).send(error.message))
+        
+      }
 }

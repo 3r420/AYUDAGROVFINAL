@@ -26,11 +26,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
     },
     rol_id:{type:DataTypes.INTEGER,
-    //   allowNull:false,
+      allowNull:false,
       references:{model:'Rol',key:'id_rol'}
   },
     nombre:{ type:DataTypes.STRING,
-    //   allowNull:false,
+       allowNull:false,
+       validate:{}
     //   validate:{
     //   notNull:{
     //     msg:'Porfavor ingrese su nombre '
@@ -45,7 +46,7 @@ module.exports = (sequelize, DataTypes) => {
     //   },
   },
     apellido:{type: DataTypes.STRING,
-      // allowNull:false,
+       allowNull:false,
       // validate:{
       //   notNull:{
       //     len:[3,50],
@@ -54,7 +55,7 @@ module.exports = (sequelize, DataTypes) => {
       //   },
     },
     correo_electronico: {type:DataTypes.STRING,
-      // allowNull:false,
+       allowNull:false,
       // unique:true,
       // validate:{
       //   notNull:{
@@ -65,7 +66,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     
     contrasena: {type:DataTypes.STRING,
-      // allowNull:false,
+       allowNull:false,
       // validate: {
       //   is: /^[0-9a-f]{64}$/i
       // }
