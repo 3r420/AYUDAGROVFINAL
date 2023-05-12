@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.hasMany(models.Usuario,{foreignKey:'rol_id'})
+      this.hasMany(models.Usuario,{foreignKey:'rol_id'}
+      )
     }
   }
   Rol.init({
@@ -19,7 +20,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull:false,
       autoIncrement:true,
       primaryKey:true,
-      type:DataTypes.INTEGER
+      type:DataTypes.INTEGER,
+      onDelete:'CASCADE',
+
     },
     
     nombre: {type:DataTypes.STRING,

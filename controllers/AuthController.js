@@ -23,7 +23,8 @@
                 res.status(200).json({msg:"No se encontro ningun usuario registrado con este correo", status:"error"});
 
             } else{
-                if(bcrypt.compareSync(contrasena, user.contrasena)&& rol_id==1){
+                console.log(user.rol_id)
+                if(bcrypt.compareSync(contrasena, user.contrasena)&& user.rol_id==1){
                     //reamos token
                     let token =jwt.sign({user:user},authConfig.secret,{
                         expiresIn:authConfig.expires
@@ -55,7 +56,7 @@
                 res.status(200).json({msg:"No se encontro ningun usuario registrado con este correo", status:"error"});
 
             } else{
-                if(bcrypt.compareSync(contrasena, user.contrasena)&& rol_id==2){
+                if(bcrypt.compareSync(contrasena, user.contrasena)&& user.rol_id==2){
                     //reamos token
                     let token =jwt.sign({user:user},authConfig.secret,{
                         expiresIn:authConfig.expires
@@ -87,7 +88,7 @@
                 res.status(200).json({msg:"No se encontro ningun usuario registrado con este correo", status:"error"});
 
             } else{
-                if(bcrypt.compareSync(contrasena, user.contrasena)&& rol_id==3){
+                if(bcrypt.compareSync(contrasena, user.contrasena)&& user.rol_id==3){
                     //reamos token
                     let token =jwt.sign({user:user},authConfig.secret,{
                         expiresIn:authConfig.expires
