@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     rol_id:{type:DataTypes.INTEGER,
       allowNull:false,
+      onDelete:'CASCADE',
       references:{model:'Rol',key:'id_rol'}
   },
     nombre:{ type:DataTypes.STRING,
