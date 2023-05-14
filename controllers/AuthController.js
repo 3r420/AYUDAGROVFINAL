@@ -109,7 +109,7 @@
     },
 
     //registro
-     registro(req,res){
+    registro(req,res){
         //encriptamos contraseña
         let {rol,nombre,apellido,correo_electronico,contrasena,telefono,direccion,estado}=req.body
     

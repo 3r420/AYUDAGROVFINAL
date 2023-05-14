@@ -7,7 +7,7 @@ module.exports = {
       pregunta_id:1,
       usuario_id:1,
       descripcion: 'respuestas claras ',
-      hora_fecha: 'agosto 2023',
+      hora_fecha: 'Darney Erazo',
    
       createdAt: new Date(),
       updatedAt: new Date()
